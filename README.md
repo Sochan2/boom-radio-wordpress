@@ -2,12 +2,12 @@
 
 This readme file is instruction to contribute as development. Please follow these steps and enjoy this boom radio development.
 
-##1: clone repository:
+## 1: clone repository:
 ```bash
 git clone https://github.com/Sochan2/boom-radio-wordpress.git
 ```
 
-##2: Create new branch for your work.
+## 2: Create new branch for your work.
 We do not work on same branch for same person. You will make your own branch and address the issue which is made in Github. If you complete every issue, it is the goal.
  - when you create your branch, use this name
 
@@ -20,7 +20,7 @@ We do not work on same branch for same person. You will make your own branch and
  git checkout -b issue-#10-make-navigation
  ```
 
- ##3: Work on your branch
+ ## 3: Work on your branch
   - **Make sure before you start, please do "git pull origin mail"**
 Then, you can start working your own allocated job. 
 
@@ -33,7 +33,7 @@ If you only push particular file, code like this:
 ```
 git add themes/boomradio/header.php themes/boomradio/footer.php
 ```
-##4 Make Pull request (PR)
+## 4 Make Pull request (PR)
 This is very important part. We want to know what you have done and where did you change, what job did you work on and some message as well if they have any other issue. In this pull request, at least one review.So, once you create a pull request, please send message on chat and check the chat consistantly.
 
 1. after you commit, go to gitHub and the bar comes down altomatically to make PR. And you click this.
