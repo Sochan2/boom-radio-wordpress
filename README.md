@@ -47,7 +47,7 @@ Checklist: no need to write. If you want us to check something, please write.
 Screenshot: For our convenience you can add. How is it working like that.
 Note: If you have nay comment... most of the time not necessary.
 
-##4-2 Check Pull Request
+### 4-2 Check Pull Request
 When you check someone's Pull Request, please do like this.
 1. Go to Pull request tab
 2. Select PR
