@@ -6,3 +6,31 @@ body {
   background-color: #f8f9fa;
   font-family: 'Arial', sans-serif;
 }
+
+
+
+#multiItemCarousel .carousel-inner {
+  padding: 0 20px;
+  overflow:visible;
+}
+
+.corousel-inneer .row{
+  margin:0;
+}
+
+.row{
+  flex-wrap: nowrap;
+}
+
+#multiItemCarousel .carousel-item {
+  transition: transform 0.5s ease;
+}
+
+.card-img-top{
+  width:110%;
+  height:110%;
+  padding: 20px;
+}
+
+
+

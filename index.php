@@ -7,35 +7,58 @@
 </head>
 <body <?php body_class(); ?>>
 
-<?php
-// get_header(); ?>
+<?php get_header(); ?>
 
-<!-- just testing the bootstrap -->
-<div class="container mt-1">
-  <h1 class="text-primary">🎉 Bootstrap is Working!</h1>
-  <p class="lead">This is a test page to confirm Bootstrap styles and components.</p>
 
-  <!-- Bootstrap Button -->
-  <button type="button" class="btn btn-success mb-3">Success Button</button>
+<!--carousel-->
+<!--carousel start-->
+<div id="multiItemCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <?php
+    $args = [
+    'category_name' => 'event', 
+    'numberposts' => 8
+  ];
 
-  <!-- Bootstrap Alert -->
-  <div class="alert alert-warning" role="alert">
-    This is a Bootstrap warning alert—check it out!
+    $custom_events = get_posts($args);
+    foreach ($custom_events as $index => $customevent):
+     
+      if ($index % 4 === 0): ?>
+        <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+          <div class="container-fluid px-0">
+            <div class="row justify-content-center gx-3 no-wrap">
+      <?php endif; ?>
+
+      <div class="col-10 col-sm-6 col-md-4">
+     
+          <?php if (has_post_thumbnail($customevent->ID)): ?>
+            <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url($customevent->ID, 'full'); ?>" alt="<?php echo esc_attr(get_the_title($customevent->ID)); ?>">
+          <?php endif; ?>
+         
+      </div>
+
+      <?php
+    
+      if (($index + 1) % 4 === 0 || $index + 1 === count($custom_events)): ?>
+            </div>
+          </div>
+        </div>
+      <?php endif;
+    endforeach;
+    ?>
   </div>
 
-  <!-- Bootstrap Card -->
-  <div class="card" style="width: 18rem;">
-    <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="Sample Image">
-    <div class="card-body">
-      <h5 class="card-title">Bootstrap Card</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#multiItemCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#multiItemCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 </div>
-<!-- test -->
 
 
-
+<script src="wp-content/themes/boom-radio-wordpress/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+-
