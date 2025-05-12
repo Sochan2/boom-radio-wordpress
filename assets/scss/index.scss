@@ -48,40 +48,9 @@
     justify-content: center;
 }
 
-.card-img-top {
-    width: 5rem;
-}
 
-.swiper {
-    padding: 2rem 0;
-    width: 100%;
-}
 
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-}
-
-.slide-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.slide-card:hover {
-    transform: translateY(-5px);
-}
-
-.slide-image img {
-    width: 10rem;
-    height: 10rem;
-    object-fit: cover;
-}
-
-.slide-content {
-    padding: 1rem;
+.slider-title {
+    font-weight: 700;
+    
 }

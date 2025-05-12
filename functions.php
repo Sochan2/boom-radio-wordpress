@@ -13,12 +13,10 @@ function enqueue_swiper_assets() {
   
   // Swiper JS
   wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], null, true);
-
-
-  wp_enqueue_script('swiper-init', get_template_directory_uri() . '/js/swiper-init.js', ['swiper-js'], null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_swiper_assets');
 
+// thumbnails 
 add_theme_support( 'post-thumbnails' );
 
 
