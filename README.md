@@ -11,6 +11,7 @@ git clone https://github.com/Sochan2/boom-radio-wordpress.git
 We do not work on same branch for same person. You will make your own branch and address the issue which is made in Github. If you complete every issue, it is the goal.
  - when you create your branch, use this name
 
+
  ```bash
  git checkout -b issue-#<issue-number>-<short description>
  ```

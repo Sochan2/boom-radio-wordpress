@@ -1,17 +1,3 @@
-// Bootstrap imports
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "./header.scss";
-@import "./index.scss";
-@import "./page.scss";
-@import "./carousel.scss";
-body {
-    font-family: "Roboto", sans-serif;
-    padding-top: 2rem;
-    padding-left: 100px;
-    padding-right: 100px;
-    background-color: #FFFEED;
-}
-
 #multiItemCarousel .carousel-inner {
   padding: 0 20px;
   overflow:visible;
@@ -77,16 +63,6 @@ body {
   background: linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));
 }
 
-img .card-img-top{
-  width:130%;
-  height:130%;
+.card-img-top{
+    width: 10rem;
 }
-.wp-block-group.alignwide {
-    margin-bottom: 3rem;
-  }
-  
-  .wp-block-image.alignleft img {
-    width: 50%;
-    margin-right: 2rem;
-    border-radius: 8px;
-  }
