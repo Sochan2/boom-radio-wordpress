@@ -27,7 +27,7 @@ Then, you can start working your own allocated job.
 #4: When you push to git 
 ```bash
 git add .
-git commit -m "<commit message>"
+git commit -m "Fix #<issue-number>: <commit-message>"
 ```
 If you only push particular file, code like this:
 ```
