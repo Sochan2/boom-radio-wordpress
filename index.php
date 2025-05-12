@@ -7,35 +7,44 @@
 </head>
 <body <?php body_class(); ?>>
 
-<?php
-// get_header(); ?>
+<?php get_header(); ?>
 
-<!-- just testing the bootstrap -->
-<div class="container mt-1">
-  <h1 class="text-primary">🎉 Bootstrap is Working!</h1>
-  <p class="lead">This is a test page to confirm Bootstrap styles and components.</p>
 
-  <!-- Bootstrap Button -->
-  <button type="button" class="btn btn-success mb-3">Success Button</button>
+<!--carousel-->
+<!--carousel start-->
+<h2> Upcoming Events & Giveaways</h2>
 
-  <!-- Bootstrap Alert -->
-  <div class="alert alert-warning" role="alert">
-    This is a Bootstrap warning alert—check it out!
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <?php
+    $custom_events = get_posts([
+      'category_name' => 'event',
+      'numberposts' => 10
+    ]);
+
+    foreach ($custom_events as $event): ?>
+      <div class="swiper-slide">
+        <div class="translate">
+          <?php if (has_post_thumbnail($event->ID)): ?>
+            <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url($event->ID,); ?>" alt="<?php echo esc_attr(get_the_title($event->ID)); ?>">
+          <?php endif; ?>
+        </div>
+       
+      </div>
+    <?php endforeach; ?>
   </div>
 
-  <!-- Bootstrap Card -->
-  <div class="card" style="width: 18rem;">
-    <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="Sample Image">
-    <div class="card-body">
-      <h5 class="card-title">Bootstrap Card</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+
+  <!-- ナビゲーションボタン -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
-<!-- test -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="wp-content/themes/boom-radio-wordpress/assets/js/main.js"></script>
 
 
-
+<!--<script src="wp-content/themes/boom-radio-wordpress/js/bootstrap.bundle.min.js"></script>-->
 </body>
 </html>
+-
