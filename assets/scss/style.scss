@@ -1,8 +1,22 @@
 // Bootstrap imports
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-// Your custom styles
+@import "./header.scss";
+@import "./index.scss";
+@import "./page.scss";
 body {
-  background-color: #f8f9fa;
-  font-family: 'Arial', sans-serif;
+    font-family: "Roboto", sans-serif;
+    padding-top: 2rem;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #FFFEED;
 }
+.wp-block-group.alignwide {
+    margin-bottom: 3rem;
+  }
+  
+  .wp-block-image.alignleft img {
+    width: 50%;
+    margin-right: 2rem;
+    border-radius: 8px;
+  }
+  

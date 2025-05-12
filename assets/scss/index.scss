@@ -1,0 +1,87 @@
+.hero-container {
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    height: 43rem;
+    border-radius: 40px;
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7));
+    opacity: 0.98;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: black;
+    z-index: 10;
+
+    h1,
+    h2,
+    p {
+        margin: 0.2em 0;
+    }
+
+    .play-button-icon {
+        margin-top: 1rem;
+    }
+
+    h1 {
+        color: #fe6a34;
+        text-shadow: rgba(0, 0, 0, 0.7) 2px 2px 2px;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-weight: 200;
+        font-size: 20px;
+    }
+}
+
+
+.hero-container {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.card-img-top {
+    width: 5rem;
+}
+
+.swiper {
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.slide-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.slide-card:hover {
+    transform: translateY(-5px);
+}
+
+.slide-image img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.slide-content {
+    padding: 1rem;
+}
