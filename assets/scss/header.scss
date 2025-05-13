@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .nav {
+        font-size: 14px;
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+    }
+}
+
+.nav-logo {
+    position: absolute;
+    left: 15%;
+}
