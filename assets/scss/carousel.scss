@@ -3,32 +3,31 @@
   overflow:visible;
 }
 
-.corousel-inneer .row{
+.corousel-inneer {
   margin:0;
+  .row{
+    flex-wrap: nowrap;
+  }
+  
 }
 
-.row{
-  flex-wrap: nowrap;
-}
 
 #multiItemCarousel .carousel-item {
   transition: transform 0.5s ease;
 }
 
 
-.swiper-slide pictre,.slider-slide img{
-  width:300px;
-  height:300px;
-  display:block;
+.card-img-top{
+  width:95;
+  height:95%;
 }
-
 
 
 .swiper-slide .card {
   height: 100%;
   display: flex;
   flex-direction:row;
-  justify-content: space-between;
+
 }
 
 
@@ -63,6 +62,7 @@
   background: linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));
 }
 
-.card-img-top{
-    width: 10rem;
+.slider-title{
+  margin-bottom: 37px;
 }
+
