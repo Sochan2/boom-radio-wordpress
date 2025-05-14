@@ -3,9 +3,9 @@
 console.log("Theme loaded");
 
 const swiper = new Swiper('.mySwiper', {
-  slidesPerView: 'auto',
+  //slidesPerView: 'auto',
   slidesPerView: 4,
-  slidesPerGroup: 1, // ← ここが「1つずつずらす」ポイント
+  slidesPerGroup: 1, 
   loop: true,
   centeredSlides: true, 
   navigation: {
@@ -13,36 +13,18 @@ const swiper = new Swiper('.mySwiper', {
     prevEl: '.swiper-button-prev',
   },
   spaceBetween: 40,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".mySwiper", {
-      loop: true,
-      spaceBetween: 30,
-      slidesPerView: 10, 
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-    });
-  });
