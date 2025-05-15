@@ -14,7 +14,7 @@
 
 .hero-text {
     position: absolute;
-    bottom: 2rem;
+    bottom: 6rem;
     left: 2rem;
     color: black;
     z-index: 10;
@@ -31,26 +31,139 @@
 
     h1 {
         color: #fe6a34;
-        text-shadow: rgba(0, 0, 0, 0.7) 2px 2px 2px;
+        text-shadow: rgba(0, 0, 0, 0.7) -4px 2px 2px;
         font-weight: 700;
+        font-size: 3rem;
+        font-family: 'Archivo Black', sans-serif;
     }
 
     h2 {
-        font-weight: 200;
-        font-size: 20px;
+        font-weight: 100;
+        font-size: 16px;
+        line-height: 1.5px;
+        letter-spacing: 1.5px;
+
+
+    }
+
+    p {
+        letter-spacing: 1px;
+        font-weight: 500;
     }
 }
 
 
 .hero-container {
-    margin-top: 6rem;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
 }
 
 
 
+.play-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 7rem;
+    height: 3rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #f1f1f1;
+        transform: scale(1.05);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px -10px,
+            rgba(0, 0, 0, 0.2) 0px 10px 10px -5px;
+    }
+
+    img {
+        margin: auto;
+    }
+
+}
+
+.article-container {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
 .slider-title {
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Archivo Black', sans-serif;
+    margin-bottom: 1rem;
     
+}
+
+.upcoming-events-slider {
+    padding-bottom: 8rem;
+}
+
+.news-slider {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+}
+
+.artist-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.artists {
+    width: 30rem;
+    margin-bottom: 2rem;
+}
+
+
+
+.artist-card {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.artists h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fe6a34;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.artists h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.artists p {
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+    padding-left: 1rem;;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .artists {
+        margin: 1rem;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
 }
