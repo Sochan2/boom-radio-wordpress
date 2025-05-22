@@ -4,8 +4,12 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ6H2pP2eCz6Hg6p6kHUlGH7FgXrlbpNN8pPeQG9o2NzTxz3sY6lkm4Wqxdz" crossorigin="anonymous">
+
     <?php wp_head(); ?>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <script src="wp-content/themes/boom-radio/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -33,6 +37,7 @@
 
         }
     </style>
+
 
 </head>
 

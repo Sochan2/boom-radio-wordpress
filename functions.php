@@ -23,6 +23,7 @@ add_action('wp_enqueue_scripts', 'enqueue_swiper_assets');
 
 
 
+
 // Enable post thumbnails
 add_theme_support('post-thumbnails');
 
@@ -37,17 +38,40 @@ function create_artist_categories()
     $parent_id = $parent['term_id'];
   } else {
     $parent_id = $parent->term_id;
+=======
+// thumbnails 
+add_theme_support( 'post-thumbnails' );
+
+//monthly artists
+function create_artist_categories() {
+ 
+  $parent = get_term_by('slug', 'artist', 'category');
+  if (!$parent) {
+      $parent = wp_insert_term('Artist', 'category', ['slug' => 'artist']);
+      if (is_wp_error($parent)) return;
+      $parent_id = $parent['term_id'];
+  } else {
+      $parent_id = $parent->term_id;
+
   }
 
   // child category(if not exist)
   if (!term_exists('local', 'category')) {
+
     wp_insert_term('Local', 'category', ['slug' => 'local', 'parent' => $parent_id]);
   }
   if (!term_exists('international', 'category')) {
     wp_insert_term('International', 'category', ['slug' => 'international', 'parent' => $parent_id]);
+=======
+      wp_insert_term('Local', 'category', ['slug' => 'local', 'parent' => $parent_id]);
+  }
+  if (!term_exists('international', 'category')) {
+      wp_insert_term('International', 'category', ['slug' => 'international', 'parent' => $parent_id]);
+
   }
 }
 add_action('init', 'create_artist_categories');
+
 
 
 // spotify API
@@ -69,6 +93,7 @@ function get_spotify_access_token() {
   $body = json_decode(wp_remote_retrieve_body($response), true);
   return $body['access_token'] ?? false;
 }
+
 
 // Updates post type
 function register_update_post_type() {
@@ -95,3 +120,4 @@ function register_update_post_type() {
   ]);
 }
 add_action('init', 'register_update_post_type');
+
