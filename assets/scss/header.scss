@@ -1,4 +1,4 @@
-/* Style the navigation container */
+
 header {
     position: fixed;
     top: 0;
@@ -40,12 +40,12 @@ header.scrolled {
 
 }
 
-/* Style the individual navigation items */
+
 .nav li {
     margin: 0 15px;
 }
 
-/* Style the navigation links */
+
 .nav a {
     text-decoration: none;
     color: #ffffff;
@@ -76,12 +76,11 @@ header.scrolled {
     margin-right: 8px;
 }
 
-/* Dropdown wrapper */
+
 .nav ul li.dropdown {
     position: relative;
 }
 
-/* Hide dropdown by default */
 .nav ul li .dropdown-menu {
     display: none;
     position: absolute;
@@ -95,12 +94,11 @@ header.scrolled {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Show on hover */
+
 .nav ul li.dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Dropdown items */
 .nav ul li .dropdown-menu li a {
     display: block;
     padding: 0.75rem 1.5rem;
@@ -116,14 +114,13 @@ header.scrolled {
 .dropdown-menu li a {
     text-decoration: none;
     color: white;
-    /* Optional: define your preferred color */
+    
 }
 
 .dropdown-menu li a:hover {
     text-decoration: none;
-    /* Still no underline on hover */
+    
     background-color: #444;
-    /* Optional: hover effect */
 }
 
 // .dropdown-menu li a::after {
