@@ -5,7 +5,9 @@
 
     <!-- Hero Section with ACF Fields (No loop needed) -->
     <div class="row hero-container position-relative">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-image.jpg" alt="hero-image" class="img-fluid hero-img">
+      <div class="hero-img-wrapper">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-image.png" alt="hero-image" class="img-fluid hero-img">
+      </div>
 
       <div class="hero-text col-12 col-md-6">
         <h2><?php the_field('now_playing_title'); ?></h2>
@@ -21,9 +23,34 @@
 
     <h1 class="slider-title">Upcoming Giveaways & Events</h1>
 
-    <div class="upcoming-events-slider">
-      <?php echo do_shortcode('[metaslider id="153"]'); ?>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <?php
+        $carousel_query = new WP_Query([
+          'post_type' => 'update', // or your custom post type
+          'category_name' => 'Updates & Giveaways',
+          'posts_per_page' => 5,
+        ]);
+
+        while ($carousel_query->have_posts()) : $carousel_query->the_post(); ?>
+          <div class="swiper-slide">
+            <a href="<?php the_permalink(); ?>">
+              <?php if (has_post_thumbnail()) {
+                the_post_thumbnail('medium', ['style' => 'border-radius: 20px; width: 18rem; height: 18rem;']);
+              } ?>
+              <!-- <h3><?php the_title(); ?></h3> -->
+            </a>
+          </div>
+        <?php endwhile;
+        wp_reset_postdata(); ?>
+      </div>
+
+      <!-- Add navigation (optional) -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- <div class="swiper-pagination"></div> -->
     </div>
+
 
     <!-- Monthly Artists Section -->
     <h1 class="slider-title">Artist of the Month</h1>
@@ -61,10 +88,40 @@
     </div>
 
     <!-- News section -->
-    <div class="news-slider">
-      <h1 class="slider-title">Latest News</h1>
-      <?php echo do_shortcode('[metaslider id="186"]'); ?>
+
+    <h1 class="slider-title">Latest News</h1>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <?php
+        $carousel_query = new WP_Query([
+          'post_type' => 'update', // or your custom post type
+          'category_name' => 'News',
+          'posts_per_page' => 5,
+        ]);
+
+        while ($carousel_query->have_posts()) : $carousel_query->the_post(); ?>
+          <div class="swiper-slide">
+            <a href="<?php the_permalink(); ?>">
+              <?php if (has_post_thumbnail()) {
+                the_post_thumbnail('medium', ['style' => 'border-radius: 20px; width: 19rem; height: 22rem;']);
+              } ?>
+              <h3 style="padding-top: 1rem; color: black; text-decoration: none;"><?php the_title(); ?></h3>
+              <p style="font-size: 0.9rem; color: #555; text-decoration: none;">
+                <?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?>
+              </p>
+              <a href="<?php the_permalink(); ?>" class="read-more-btn">Read On</a>
+            </a>
+          </div>
+        <?php endwhile;
+        wp_reset_postdata(); ?>
+      </div>
+
+      <!-- Add navigation (optional) -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- <div class="swiper-pagination"></div> -->
     </div>
+
 
   </div>
 </main>
@@ -102,6 +159,30 @@
     if (playButton) {
       playButton.addEventListener("click", togglePlayer);
     }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.mySwiper', {
+      loop: true,
+      spaceBetween: 20,
+      slidesPerView: 6,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 4,
+        }
+      }
+    });
   });
 </script>
 

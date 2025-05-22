@@ -1,9 +1,26 @@
 /* Style the navigation container */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 3rem;
+    background-color: #313131;
+
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+header.scrolled {
+    padding: 1rem 3rem;
+    background-color: #212121;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 
 .nav {
     ul {
@@ -19,8 +36,8 @@ header {
 
 .nav-logo-link {
     position: absolute;
-    left: 15%;
-    
+    left: 10%;
+
 }
 
 /* Style the individual navigation items */
@@ -31,7 +48,7 @@ header {
 /* Style the navigation links */
 .nav a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-size: 13px;
     font-weight: 500;
     display: inline-flex;
@@ -39,22 +56,83 @@ header {
     position: relative;
 }
 
-.nav a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #F05A25;
-    left: 5;
-    bottom: -5px;
-    transition: width 0.3s ease;
-}
+// .nav a::after {
+//     content: "";
+//     position: absolute;
+//     width: 0;
+//     height: 2px;
+//     background-color: #F05A25;
+//     left: 5;
+//     bottom: -5px;
+//     transition: width 0.3s ease;
+// }
 
 .nav a:hover::after {
     width: 100%;
-   
+
 }
 
 .nav img {
     margin-right: 8px;
 }
+
+/* Dropdown wrapper */
+.nav ul li.dropdown {
+    position: relative;
+}
+
+/* Hide dropdown by default */
+.nav ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #313131;
+    padding: 1rem 0;
+    border-radius: 8px;
+    z-index: 1000;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Show on hover */
+.nav ul li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown items */
+.nav ul li .dropdown-menu li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav ul li .dropdown-menu li a:hover {
+    background-color: #444;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: white;
+    /* Optional: define your preferred color */
+}
+
+.dropdown-menu li a:hover {
+    text-decoration: none;
+    /* Still no underline on hover */
+    background-color: #444;
+    /* Optional: hover effect */
+}
+
+// .dropdown-menu li a::after {
+//     content: "";
+//     position: absolute;
+//     width: 0;
+//     height: 2px;
+//     background-color: #F05A25;
+//     left: 0;
+//     bottom: -5px;
+//     transition: width 0.3s ease;
+// }

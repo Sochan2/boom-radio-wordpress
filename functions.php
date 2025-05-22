@@ -18,7 +18,6 @@ function enqueue_swiper_assets()
 {
   wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
   wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], null, true);
-  wp_enqueue_script('swiper-init', get_template_directory_uri() . 'assets/js/swiper-init.js', ['swiper-js'], null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_swiper_assets');
 
@@ -70,3 +69,29 @@ function get_spotify_access_token() {
   $body = json_decode(wp_remote_retrieve_body($response), true);
   return $body['access_token'] ?? false;
 }
+
+// Updates post type
+function register_update_post_type() {
+  register_post_type('update', [
+    'labels' => [
+      'name' => 'Updates',
+      'singular_name' => 'Update',
+      'add_new_item' => 'Add New Update',
+      'edit_item' => 'Edit Update',
+      'new_item' => 'New Update',
+      'view_item' => 'View Update',
+      'search_items' => 'Search Updates',
+      'not_found' => 'No Updates found',
+      'not_found_in_trash' => 'No Updates found in Trash',
+    ],
+    'public' => true,
+    'has_archive' => true,
+    'rewrite' => ['slug' => 'updates'],
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-megaphone', 
+    'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+    'taxonomies' => ['category'], 
+    'show_in_rest' => true,
+  ]);
+}
+add_action('init', 'register_update_post_type');
