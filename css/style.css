@@ -11854,7 +11854,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* Style the navigation container */
+
 header {
   display: flex;
   justify-content: center;
@@ -12115,6 +12115,7 @@ footer {
   transition: transform 0.4s ease-in-out;
 }
 
+
 .live-radio.visible {
   transform: translateY(0);
 }
@@ -12133,14 +12134,27 @@ footer {
   border: none;
   cursor: pointer;
   transition: bottom 0.4s ease-in-out, background 0.3s ease;
+=======
+.corousel-inneer {
+  margin: 0;
+}
+.corousel-inneer .row {
+  flex-wrap: nowrap;
+
 }
 
 .radio-toggle.radio-active {
   bottom: 100px; /* Moves up with the player (adjust based on player height) */
 }
 
+
 .radio-toggle:hover {
   background: #d94f1f;
+=======
+.card-img-top {
+  width: 95;
+  height: 95%;
+
 }
 
 /* Podcast Page Styles */
@@ -12150,9 +12164,13 @@ footer {
 
 .podcast-container {
   display: flex;
+
   gap: 7rem;
   justify-content: center;
   margin-top: 8rem;
+=======
+  flex-direction: row;
+
 }
 
 .text-container {
@@ -12183,6 +12201,7 @@ h3, .h3 {
   margin-bottom: 30px;
 }
 
+
 .podcast-page img {
   max-width: 100%;
   border-radius: 8px;
@@ -12196,6 +12215,10 @@ h3, .h3 {
 
 .podcast-page .ratio {
   margin-bottom: 20px;
+=======
+.slider-title {
+  margin-bottom: 37px;
+
 }
 
 .podcast-page .ratio iframe {
@@ -12224,10 +12247,6 @@ header {
   padding-top: 2rem;
   padding-left: 150px;
   padding-right: 150px;
-}
-
-body {
-  background-color: #FFFEED;
 }
 
 /*# sourceMappingURL=style.css.map */
