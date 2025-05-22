@@ -11854,21 +11854,78 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
 header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .nav {
-  font-size: 14px;
-  list-style: none;
+
+.nav ul {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-logo {
+.nav-logo-link {
   position: absolute;
   left: 15%;
+}
+
+/* Style the individual navigation items */
+.nav li {
+  margin: 0 15px;
+}
+
+/* Style the navigation links */
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #F05A25;
+  left: 5;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav img {
+  margin-right: 8px;
+}
+
+footer {
+  margin-top: 15rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer i {
+  font-size: 20px;
 }
 
 .hero-container {
@@ -11887,7 +11944,7 @@ header .nav {
 
 .hero-text {
   position: absolute;
-  bottom: 2rem;
+  bottom: 6rem;
   left: 2rem;
   color: black;
   z-index: 10;
@@ -11903,26 +11960,130 @@ header .nav {
 }
 .hero-text h1, .hero-text .h1 {
   color: #fe6a34;
-  text-shadow: rgba(0, 0, 0, 0.7) 2px 2px 2px;
+  text-shadow: rgba(0, 0, 0, 0.7) -4px 2px 2px;
   font-weight: 700;
+  font-size: 3rem;
+  font-family: "Archivo Black", sans-serif;
 }
 .hero-text h2, .hero-text .h2 {
-  font-weight: 200;
-  font-size: 20px;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 1.5px;
+  letter-spacing: 1.5px;
+}
+.hero-text p {
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 .hero-container {
-  margin-top: 6rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
 }
 
-.slider-title {
-  font-weight: 700;
+.play-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  width: 7rem;
+  height: 3rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.play-button:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px -10px, rgba(0, 0, 0, 0.2) 0px 10px 10px -5px;
+}
+.play-button img {
+  margin: auto;
 }
 
+.article-container {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.slider-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Archivo Black", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.upcoming-events-slider {
+  padding-bottom: 8rem;
+}
+
+.news-slider {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.artist-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.artists {
+  width: 30rem;
+  margin-bottom: 2rem;
+}
+
+.artist-card {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.artists h3, .artists .h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fe6a34;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.artists h4, .artists .h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.artists p {
+  font-size: 1rem;
+  color: #555;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .artists {
+    margin: 1rem;
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
 .page-container {
-  margin-top: 8rem;
+  padding-top: 8rem;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 .article-text {
@@ -11941,160 +12102,151 @@ header .nav {
   border-radius: 10px;
 }
 
-#multiItemCarousel .carousel-inner {
-  padding: 0 20px;
-  overflow: visible;
+.live-radio {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+  border-top: 2px solid #F05A25;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
 }
 
+
+.live-radio.visible {
+  transform: translateY(0);
+}
+
+.radio-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  padding: 1rem;
+  background: #F05A25;
+  color: white;
+  border-radius: 50%;
+  height: 4.5rem;
+  width: 4.5rem;
+  border: none;
+  cursor: pointer;
+  transition: bottom 0.4s ease-in-out, background 0.3s ease;
+=======
 .corousel-inneer {
   margin: 0;
 }
 .corousel-inneer .row {
   flex-wrap: nowrap;
+
 }
 
-#multiItemCarousel .carousel-item {
-  transition: transform 0.5s ease;
+.radio-toggle.radio-active {
+  bottom: 100px; /* Moves up with the player (adjust based on player height) */
 }
 
+
+.radio-toggle:hover {
+  background: #d94f1f;
+=======
 .card-img-top {
   width: 95;
   height: 95%;
+
 }
 
-.swiper-slide .card {
-  height: 100%;
+/* Podcast Page Styles */
+.podcast-page .container {
+  max-width: 1200px;
+}
+
+.podcast-container {
   display: flex;
+
+  gap: 7rem;
+  justify-content: center;
+  margin-top: 8rem;
+=======
   flex-direction: row;
+
 }
 
-.translate {
-  transform: translateX(-10px);
-  justify-content: space-between;
+.text-container {
+  width: 20rem;
 }
 
-.mySwiper {
-  position: relative;
-  overflow: hidden;
+h3, .h3 {
+  color: #fe6a34;
+  font-weight: 700;
 }
 
-.mySwiper:before, .mySwiper::after {
-  content: "";
-  width: 60px;
-  position: absolute;
-  top: 0;
-  height: 100px;
-  z-index: 2;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+.podcast-page h1, .podcast-page .h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.mySwiper::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+.podcast-page h3, .podcast-page .h3 {
+  font-size: 1.5rem;
+  color: #6c757d; /* Muted text color */
+  margin-bottom: 20px;
 }
 
-.mySwiper::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+.podcast-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
 }
 
+
+.podcast-page img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.podcast-page .row {
+  margin-top: 40px;
+}
+
+.podcast-page .ratio {
+  margin-bottom: 20px;
+=======
 .slider-title {
   margin-bottom: 37px;
+
 }
 
-body {
+.podcast-page .ratio iframe {
+  border-radius: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .podcast-page h1, .podcast-page .h1 {
+    font-size: 2rem;
+  }
+  .podcast-page h3, .podcast-page .h3 {
+    font-size: 1.25rem;
+  }
+  .podcast-page p {
+    font-size: 0.9rem;
+  }
+}
+.community-container {
+  margin-top: 10rem;
+}
+
+main,
+header {
   font-family: "Roboto", sans-serif;
   padding-top: 2rem;
-  padding-left: 100px;
-  padding-right: 100px;
-  background-color: #FFFEED;
-}
-
-#multiItemCarousel .carousel-inner {
-  padding: 0 20px;
-  overflow: visible;
-}
-
-.corousel-inneer .row {
-  margin: 0;
-}
-
-#multiItemCarousel .carousel-item {
-  transition: transform 0.5s ease;
-}
-
-.swiper-slide .card {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.translate {
-  transform: translateX(-10px);
-  justify-content: space-between;
-}
-
-.mySwiper {
-  position: relative;
-  overflow: hidden;
-}
-
-.mySwiper:before, .mySwiper::after {
-  content: "";
-  width: 60px;
-  position: absolute;
-  top: 0;
-  height: 100px;
-  z-index: 2;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
-}
-
-.mySwiper::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
-}
-
-.mySwiper::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
-}
-
-img .card-img-top {
-  width: 130%;
-  height: 130%;
-}
-
-.wp-block-group.alignwide {
-  margin-bottom: 3rem;
-}
-
-.wp-block-image.alignleft img {
-  width: 50%;
-  margin-right: 2rem;
-  border-radius: 8px;
-}
-
-.article-container {
-  margin-top: 4em;
-}
-
-.artist-card {
-  width: 70%;
-  height: 70%;
-}
-
-.artists {
-  margin-bottom: 3.5em;
-  padding-right: 1em;
-}
-
-div h3, div .h3 {
-  color: #EE5B26;
-}
-
-div h4, div .h4 {
-  font-size: 2.5rem;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,17 +1,60 @@
+/* Style the navigation container */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    & .nav {
-        font-size: 14px;
-        list-style: none;
+}
+
+.nav {
+    ul {
         display: flex;
-        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
     }
 }
 
-.nav-logo {
+.nav-logo-link {
     position: absolute;
     left: 15%;
+    
+}
+
+/* Style the individual navigation items */
+.nav li {
+    margin: 0 15px;
+}
+
+/* Style the navigation links */
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #F05A25;
+    left: 5;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+   
+}
+
+.nav img {
+    margin-right: 8px;
 }

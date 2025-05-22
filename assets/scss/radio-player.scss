@@ -1,0 +1,40 @@
+.live-radio {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+  border-top: 2px solid #F05A25;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.live-radio.visible {
+  transform: translateY(0);
+}
+
+.radio-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  padding: 1rem;;
+  background: #F05A25;
+  color: white;
+  border-radius: 50%;
+  height: 4.5rem;
+  width: 4.5rem;
+  border: none;
+  cursor: pointer;
+  transition: bottom 0.4s ease-in-out, background 0.3s ease;
+}
+
+.radio-toggle.radio-active {
+  bottom: 100px; /* Moves up with the player (adjust based on player height) */
+}
+
+.radio-toggle:hover {
+  background: #d94f1f;
+}

@@ -2,108 +2,31 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "./header.scss";
+@import "./footer.scss";
 @import "./index.scss";
 @import "./page.scss";
 @import "./carousel.scss";
+@import "./radio-player.scss";
+@import "./podcast-page.scss";
+@import "./community.scss";
 
+main,
+header {
+  font-family: "Roboto", sans-serif;
+  padding-top: 2rem;
+  padding-left: 150px;
+  padding-right: 150px;
+}
 body {
-    font-family: "Roboto", sans-serif;
+ ont-family: "Roboto", sans-serif;
     padding-top: 2rem;
     padding-left: 100px;
     padding-right: 100px;
     background-color: #FFFEED;
-}
-
-#multiItemCarousel .carousel-inner {
-  padding: 0 20px;
-  overflow:visible;
-}
-
-.corousel-inneer .row{
-  margin:0;
-}
-
-
-
-#multiItemCarousel .carousel-item {
-  transition: transform 0.5s ease;
-}
-
-
-
-.swiper-slide .card {
-  height: 100%;
-  display: flex;
-  flex-direction:row;
-  justify-content: space-between;
-}
-
-
-.translate{
-  transform:translateX(-10px);
-  justify-content: space-between;
-
-}
-
-.mySwiper{
-  position: relative;
-  overflow: hidden;
-}
-.mySwiper:before, .mySwiper::after{
-  content: '';
-  width:60px;
-  position: absolute;
-  top:0;
-  height:100px;
-  z-index:2;
-  background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));
-
-}
-
-.mySwiper::before{
-  left: 0;
-  background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));
-}
-
-.mySwiper::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));
-}
-
-img .card-img-top{
-  width:130%;
-  height:130%;
-}
-.wp-block-group.alignwide {
-    margin-bottom: 3rem;
-  }
-  
-  .wp-block-image.alignleft img {
-    width: 50%;
-    margin-right: 2rem;
-    border-radius: 8px;
   }
 
 
-  .article-container{
-    margin-top: 4em;
-  }
 
-  .artist-card{
-    width:70%;
-    height:70%;
-  }
 
-  .artists{
-    margin-bottom: 3.5em;
-    padding-right: 1em;
-  }
 
-div h3{
-  color:#EE5B26;
-}
 
-div h4{
-  font-size:2.5rem;
-}
- 

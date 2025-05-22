@@ -1,43 +1,26 @@
 <?php
-/*
-Template Name: Article Post Layout
-*/
-get_template_part('parts/header'); ?>
 
-<div class="container page-container">
-  <article>
-    <div class="article-text">
-      <!-- Featured image -->
-      <div class="image-wrapper">
-        <?php
-        if (has_post_thumbnail()) {
-          the_post_thumbnail('full', ['class' => 'img-fluid article-image', 'alt' => 'Featured image']);
-        } else {
-          echo '<img src="' . get_template_directory_uri() . '/assets/img/hero-image.png" alt="Featured image" class="img-fluid article-image" />';
-        }
-        ?>
-      </div>
+/**
+ * Template Name: Community Page
+ */
 
-      <!-- Text content -->
-      <p class="mb-1">
-        <?php
-        if (is_singular('post')) {
-          the_category(', ');
-        }
-        ?>
-      </p>
-      <h1 class="article-title"><?php the_title(); ?></h1>
-    
+get_template_part('parts/header');
+?>
+<div class="community-container container py-10">
 
-      <div class="post-content">
-        <?php
-        while (have_posts()) : the_post();
-          the_content();
-        endwhile;
-        ?>
-      </div>
+    <!-- Upcoming events section -->
+
+    <div class="upcoming-events-slider">
+        <h1 class="slider-title">Upcoming Giveaways & Events</h1>
+        <?php echo do_shortcode('[metaslider id="153"]'); ?>
     </div>
-  </article>
+
+
+    <!-- News section -->
+    <div class="news-slider">
+        <h1 class="slider-title">Latest News</h1>
+        <?php echo do_shortcode('[metaslider id="186"]'); ?>
+    </div>
 </div>
 
 <!-- Live Radio Player -->
@@ -75,5 +58,6 @@ get_template_part('parts/header'); ?>
     }
   });
 </script>
+
 
 <?php get_template_part('parts/footer'); ?>
