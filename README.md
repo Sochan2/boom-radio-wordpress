@@ -34,6 +34,34 @@ If you only push particular file, code like this:
 ```
 git add themes/boomradio/header.php themes/boomradio/footer.php
 ```
+
+### If other people merge to main and you are still working, what would you do?
+What I explain here is the way to solve conflict problem. If you push code and completed merge, but you are still working on your edit in your code. In this case, if you add git, it appears conflict. So, please make sure to pull code first. Even if you pull code in your edit, the code does not replace from main. Don't worry about this.
+
+1. get latest main code
+```
+git checkout main
+git pull origin main
+```
+
+2. back to your branch and merge
+```
+git checkout <your-branch-name>
+git merge main
+
+```
+3. If conflict comes up your editor, you solve conflict by yourself.(sadly, manual)
+```
+<<<<<<< HEAD
+codecodecodecodecodecodecodecode
+=======
+mainブランチの変更内容
+>>>>>>> main
+code2code2code2code2code2code2
+```
+You can leave both or either, if you delete ">>>>>" line,you can change manually.
+
+4. After that, push code as normal way.
 ## 4 Make Pull request (PR)
 This is very important part. We want to know what you have done and where did you change, what job did you work on and some message as well if they have any other issue. In this pull request, at least one review.So, once you create a pull request, please send message on chat and check the chat consistantly.
 
