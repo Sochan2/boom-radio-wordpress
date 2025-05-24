@@ -1,3 +1,4 @@
+
 <?php
 function my_custom_enqueue_scripts()
 {
@@ -95,3 +96,37 @@ function register_update_post_type() {
   ]);
 }
 add_action('init', 'register_update_post_type');
+
+
+//Menu
+function add_my_menu() {
+  register_nav_menus(array(
+      'main-menu' => 'BoomRadio Menu',
+  ));
+}
+add_action('after_setup_theme', 'add_my_menu');
+
+//custom icon
+
+function add_menu_icons($menu_title, $menu_item, $menu_args) {
+
+  if ($menu_args->theme_location == 'main-menu') {
+
+      switch (trim($menu_title)) {
+          case 'Home':
+              $menu_icon = '<img src="' . get_template_directory_uri() . '/assets/img/home-icon.svg" alt="home-icon" width="20" style="vertical-align:middle; margin-right:5px;">';
+              $menu_title = $menu_icon . $menu_title;
+              break;
+          case 'podcasts':
+              $menu_icon = '<img src="' . get_template_directory_uri() . '/assets/img/podcast-icon.svg" alt="podcast-icon" width="20" style="vertical-align:middle; margin-right:5px;">';
+              $menu_title = $menu_icon . $menu_title;
+              break;
+          case 'Community':
+              $menu_icon = '<img src="' . get_template_directory_uri() . '/assets/img/community-icon.svg" alt="community-icon" width="20" style="vertical-align:middle; margin-right:5px;">';
+              $menu_title = $menu_icon . $menu_title;
+              break;
+      }
+  }
+  return $menu_title;
+}
+add_filter('nav_menu_item_title', 'add_menu_icons', 10, 4);
