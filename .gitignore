@@ -4,6 +4,6 @@ node_modules/
 *.zip
 npm-debug.log
 sass-cache/
-css/style.css.map
+style.css.map
 css/style.css
 
