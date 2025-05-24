@@ -22,31 +22,22 @@ header.scrolled {
 }
 
 
-.nav {
-    ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-    }
-}
-
-.nav-logo-link {
-    position: absolute;
-    left: 10%;
-
-}
-
-
-.nav li {
+.nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
     margin: 0 15px;
-}
-
-
-.nav a {
+    position: relative; //for dropdown
+  }
+  
+  /* link */
+  .nav a {
     text-decoration: none;
     color: #ffffff;
     font-size: 13px;
@@ -54,34 +45,30 @@ header.scrolled {
     display: inline-flex;
     align-items: center;
     position: relative;
-}
-
-// .nav a::after {
-//     content: "";
-//     position: absolute;
-//     width: 0;
-//     height: 2px;
-//     background-color: #F05A25;
-//     left: 5;
-//     bottom: -5px;
-//     transition: width 0.3s ease;
-// }
-
-.nav a:hover::after {
-    width: 100%;
-
-}
-
-.nav img {
+  }
+  
+  .nav a img {
     margin-right: 8px;
-}
-
-
-.nav ul li.dropdown {
-    position: relative;
-}
-
-.nav ul li .dropdown-menu {
+  }
+  
+  /* ホバー時の下線アニメーション */
+  .nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+   // background-color: #F05A25;
+    left: 0;
+    bottom: -5px;
+    //transition: width 0.3s ease;
+  }
+  
+  .nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* submenu style */
+  .nav .sub-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -91,45 +78,30 @@ header.scrolled {
     border-radius: 8px;
     z-index: 1000;
     min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-
-.nav ul li.dropdown:hover .dropdown-menu {
+   // box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* hover to parents and submenu css */
+  .nav li:hover > .sub-menu {
     display: block;
-}
-
-.nav ul li .dropdown-menu li a {
+  }
+  
+/*submenu link*/
+  .nav .sub-menu li a {
     display: block;
     padding: 0.75rem 1.5rem;
     color: white;
     text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.nav ul li .dropdown-menu li a:hover {
+    white-space: nowrap;
+  }
+  
+  .nav .sub-menu li a:hover {
     background-color: #444;
-}
-
-.dropdown-menu li a {
-    text-decoration: none;
-    color: white;
-    
-}
-
-.dropdown-menu li a:hover {
-    text-decoration: none;
-    
-    background-color: #444;
-}
-
-// .dropdown-menu li a::after {
-//     content: "";
-//     position: absolute;
-//     width: 0;
-//     height: 2px;
-//     background-color: #F05A25;
-//     left: 0;
-//     bottom: -5px;
-//     transition: width 0.3s ease;
-// }
+  }
+  
+  /* Logo*/
+  .nav-logo-link {
+    position: absolute;
+    left: 10%;
+  }
+  
