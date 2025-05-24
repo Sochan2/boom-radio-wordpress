@@ -1,5 +1,5 @@
-// Bootstrap imports
 
+// Bootstrap imports
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "./header.scss";
 @import "./footer.scss";
@@ -17,7 +17,6 @@ header {
   padding-left: 150px;
   padding-right: 150px;
 }
-
 
 body::before {
   content: "";
