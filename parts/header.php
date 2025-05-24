@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -8,7 +7,7 @@
     <?php wp_head(); ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <script src="wp-content/themes/boom-radio/js/bootstrap.bundle.min.js"></script>
-    <script>
+    <script src="./js/main.js">
         document.addEventListener("DOMContentLoaded", function() {
             const header = document.querySelector("header");
 
@@ -57,5 +56,5 @@
             </nav>
 
 
-        
-
+           
+        </header>

@@ -1,8 +1,8 @@
 <?php get_template_part('parts/header'); ?>
 
+
 <main>
   <div class="container">
-  
 
     <!-- Hero Section with ACF Fields (No loop needed) -->
     <div class="row hero-container position-relative">
@@ -23,7 +23,6 @@
     <!-- Upcoming giveaways and events section -->
 
     <h1 class="slider-title">Upcoming Giveaways & Events</h1>
-  
 
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
