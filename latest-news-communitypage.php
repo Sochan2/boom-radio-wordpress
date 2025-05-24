@@ -19,7 +19,7 @@ get_template_part('parts/header');
     ]);
 
     while ($grid_query->have_posts()) : $grid_query->the_post(); ?>
-      <div class="col-md-6 col-lg-4 mb-4">
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
         <div class="card h-100">
           <a href="<?php the_permalink(); ?>">
             <?php if (has_post_thumbnail()) {

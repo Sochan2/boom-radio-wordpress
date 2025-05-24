@@ -12152,7 +12152,6 @@ footer {
   .row {
     display: flex;
     justify-content: center;
-    gap: 2rem;
   }
 }
 .page-container {
