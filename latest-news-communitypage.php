@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Template Name: Latest news page
@@ -14,11 +15,11 @@ get_template_part('parts/header');
     $grid_query = new WP_Query([
       'post_type' => 'update',
       'category_name' => 'News',
-      'posts_per_page' => 8,
+      'posts_per_page' => 6,
     ]);
 
     while ($grid_query->have_posts()) : $grid_query->the_post(); ?>
-      <div class="col-md-4 mb-4">
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
         <div class="card h-100">
           <a href="<?php the_permalink(); ?>">
             <?php if (has_post_thumbnail()) {
@@ -57,3 +58,5 @@ get_template_part('parts/header');
 </style>
 
 <?php get_template_part('parts/footer'); ?>
+
+
