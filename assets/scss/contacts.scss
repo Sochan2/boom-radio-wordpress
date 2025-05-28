@@ -1,0 +1,23 @@
+.contact-form{
+  margin: 10em 5em;
+}
+
+#wpforms-submit-287{
+  background-color: #FF5F1F;
+  color:#fff;
+  border-radius: 25px;
+
+}
+
+#wpforms-submit-287:hover{
+  background-color: #364042;
+  color:#fff;
+}
+
+.wpforms-form input[type="text"]:focus,
+.wpforms-form input[type="email"]:focus,
+.wpforms-form textarea:focus {
+  border-color: #FF5F1F !important;
+  outline: none;
+  box-shadow: 0 0 0 1px #000;
+}
