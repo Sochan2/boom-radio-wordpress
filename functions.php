@@ -51,7 +51,8 @@ add_action('init', 'create_artist_categories');
 
 
 // spotify API
-function get_spotify_access_token() {
+function get_spotify_access_token()
+{
   $client_id = '232ae4c160d34d578b9ae995e3f92e02';
   $client_secret = '9d9bc6eb006b44948c4e948cb2e16b94';
 
@@ -69,9 +70,39 @@ function get_spotify_access_token() {
   $body = json_decode(wp_remote_retrieve_body($response), true);
   return $body['access_token'] ?? false;
 }
+//Artist of the month post type 
+function register_artist_of_the_month_cpt()
+{
+  register_post_type('artist_of_the_month', [
+    'labels' => [
+      'name' => 'Artists of the Month',
+      'singular_name' => 'Artist of the Month',
+    ],
+    'public' => true,
+    'has_archive' => false,
+    'menu_icon' => 'dashicons-star-filled',
+    'supports' => ['title', 'editor', 'thumbnail'],
+    'rewrite' => ['slug' => 'artist-of-the-month'],
+    'show_in_rest' => true,
+  ]);
+
+  // Register taxonomy for category (Local/International)
+  register_taxonomy('artist_type', 'artist_of_the_month', [
+    'labels' => [
+      'name' => 'Artist Type',
+      'singular_name' => 'Artist Type',
+    ],
+    'hierarchical' => true,
+    'public' => true,
+    'rewrite' => ['slug' => 'artist-type'],
+    'show_in_rest' => true,
+  ]);
+}
+add_action('init', 'register_artist_of_the_month_cpt');
 
 // Updates post type
-function register_update_post_type() {
+function register_update_post_type()
+{
   register_post_type('update', [
     'labels' => [
       'name' => 'Updates',
@@ -88,10 +119,77 @@ function register_update_post_type() {
     'has_archive' => true,
     'rewrite' => ['slug' => 'updates'],
     'menu_position' => 5,
-    'menu_icon' => 'dashicons-megaphone', 
+    'menu_icon' => 'dashicons-megaphone',
     'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
-    'taxonomies' => ['category'], 
+    'taxonomies' => ['category'],
     'show_in_rest' => true,
   ]);
 }
 add_action('init', 'register_update_post_type');
+
+function add_my_menu()
+{
+  register_nav_menus(array(
+    'main-menu' => 'BoomRadio Menu',
+  ));
+}
+add_action('after_setup_theme', 'add_my_menu');
+
+//custom icon
+
+function add_menu_icons($title, $item, $args, $depth) {
+  
+  if ($args->theme_location !== 'main-menu') {
+    return $title;
+  }
+
+  
+  $icon_map = [
+    'home-icon'      => 'home-icon.svg',
+    'podcasts-icon'  => 'podcast-icon.svg',
+    'community-icon' => 'community-icon.svg',
+  ];
+
+  // Check for specific menu classes
+  $classes = $item->classes;
+  $icon_file = '';
+
+  foreach ($classes as $class) {
+    if (array_key_exists($class, $icon_map)) {
+      $icon_file = $icon_map[$class];
+      break;
+    }
+  }
+
+  if (!$icon_file) {
+    switch (strtolower(trim($title))) {
+      case 'home':
+        $icon_file = 'home-icon.svg';
+        break;
+      case 'podcasts':
+        $icon_file = 'podcast-icon.svg';
+        break;
+      case 'community':
+        $icon_file = 'community-icon.svg';
+        break;
+    }
+  }
+
+ 
+  if (!$icon_file) return $title;
+
+  $icon_url = esc_url(get_template_directory_uri() . '/assets/img/' . $icon_file);
+  $icon_img = '<img class="menu-icon" src="' . $icon_url . '" alt="" aria-hidden="true">';
+
+  return $icon_img . '<span class="menu-label">' . esc_html($title) . '</span>';
+}
+add_filter('nav_menu_item_title', 'add_menu_icons', 10, 4);
+
+
+//Custom search query
+function customize_search_results($query) {
+    if ($query->is_search() && $query->is_main_query()) {
+        $query->set('post_type', array('update', 'artist_of_the_month', 'post'));
+    }
+}
+add_action('pre_get_posts', 'customize_search_results');

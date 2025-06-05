@@ -11854,7 +11854,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* Style the navigation container */
 header {
   position: fixed;
   top: 0;
@@ -11884,17 +11883,12 @@ header.scrolled {
   padding: 0;
 }
 
-.nav-logo-link {
-  position: absolute;
-  left: 10%;
-}
-
-/* Style the individual navigation items */
 .nav li {
   margin: 0 15px;
+  position: relative;
 }
 
-/* Style the navigation links */
+/* link */
 .nav a {
   text-decoration: none;
   color: #ffffff;
@@ -11905,21 +11899,26 @@ header.scrolled {
   position: relative;
 }
 
+.nav a img {
+  margin-right: 8px;
+}
+
+/* ホバー時の下線アニメーション */
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+}
+
 .nav a:hover::after {
   width: 100%;
 }
 
-.nav img {
-  margin-right: 8px;
-}
-
-/* Dropdown wrapper */
-.nav ul li.dropdown {
-  position: relative;
-}
-
-/* Hide dropdown by default */
-.nav ul li .dropdown-menu {
+/* submenu style */
+.nav .sub-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -11929,45 +11928,59 @@ header.scrolled {
   border-radius: 8px;
   z-index: 1000;
   min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Show on hover */
-.nav ul li.dropdown:hover .dropdown-menu {
+/* hover to parents and submenu css */
+.nav li:hover > .sub-menu {
   display: block;
 }
 
-/* Dropdown items */
-.nav ul li .dropdown-menu li a {
+/*submenu link*/
+.nav .sub-menu li a {
   display: block;
   padding: 0.75rem 1.5rem;
   color: white;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
-.nav ul li .dropdown-menu li a:hover {
+.nav .sub-menu li a:hover {
   background-color: #444;
 }
 
-.dropdown-menu li a {
-  text-decoration: none;
-  color: white;
-  /* Optional: define your preferred color */
+/* Logo*/
+.nav-logo-link {
+  position: absolute;
+  left: 10%;
 }
 
-.dropdown-menu li a:hover {
-  text-decoration: none;
-  /* Still no underline on hover */
-  background-color: #444;
-  /* Optional: hover effect */
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.menu-label {
+  display: inline-block;
+  padding-top: 6px;
+  vertical-align: middle;
 }
 
 footer {
   margin-top: 15rem;
   background-color: #333;
-  padding: 1rem;
+  padding: 7rem;
+  padding-bottom: 3rem;
+  padding-left: 4rem;
   color: white;
+}
+footer h4, footer .h4, footer h5, footer .h5 {
+  font-size: 17px;
+}
+footer h4, footer .h4, footer h5, footer .h5, footer h6, footer .h6 {
+  font-weight: 600;
+  text-align: left;
 }
 
 .footer a {
@@ -11985,15 +11998,47 @@ footer {
   color: white;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sub-container-1 {
+  display: flex;
+  text-align: left;
+  gap: 6rem;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.sub-container-3 {
+  padding-top: 3rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.menu-container li, .categories-container li, .company-container li {
+  margin-top: 1rem;
+}
+
+.copyright {
+  text-align: left;
+  color: #ffffff;
+}
+
 .hero-container {
   position: relative;
-  padding-top: 5rem;
+  padding-top: 9rem;
 }
 
 .hero-img {
-  width: 120rem;
-  height: 35rem;
-  border-radius: 40px;
+  width: 95rem;
+  height: 42rem;
+  border-radius: 30px;
   margin-bottom: 10rem;
 }
 
@@ -12025,7 +12070,6 @@ footer {
   text-shadow: rgba(0, 0, 0, 0.7) -4px 2px 2px;
   font-weight: 700;
   font-size: 3rem;
-  font-family: "Archivo Black", sans-serif;
 }
 .hero-text h2, .hero-text .h2 {
   font-weight: 100;
@@ -12075,32 +12119,23 @@ footer {
   margin: auto;
 }
 
-.read-more-btn {
-  display: inline-block;
-  margin-top: 10px;
-  background-color: black;
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-}
-
-.read-more-btn:hover {
-  background-color: #333;
-}
-
 .article-container {
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   text-align: center;
+  margin-bottom: 10rem;
 }
 
 .slider-title {
   font-size: 1.8rem;
-  font-weight: bold;
-  font-family: "Archivo Black", sans-serif;
-  margin-bottom: 1rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+.latest-episodes-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  margin-top: 8rem;
 }
 
 .upcoming-events-slider {
@@ -12113,44 +12148,33 @@ footer {
 }
 
 .artist-container {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.artist-container-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.podcast-container-inner {
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.artists {
-  width: 30rem;
-  margin-bottom: 2rem;
-}
-
-.artist-card {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.artists h3, .artists .h3 {
-  font-size: 1rem;
-  font-weight: 600;
+.artist-type {
   color: #fe6a34;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.artists h4, .artists .h4 {
-  font-size: 1.5rem;
+.card-title {
   font-weight: 700;
-  margin-bottom: 0.75rem;
-  text-align: left;
-  padding-left: 1rem;
-}
-
-.artists p {
-  font-size: 1rem;
-  color: #555;
-  text-align: left;
-  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Responsive layout */
@@ -12229,7 +12253,48 @@ footer {
 }
 
 .swiper {
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.slide-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-height: 800px; /* Or however tall you want each slide */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.slide-title {
+  padding-top: 1rem;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.slide-excerpt {
+  font-size: 0.9rem;
+  color: #555;
+  flex-grow: 1; /* Takes up remaining space to push button down */
+  margin-bottom: 1rem;
+}
+
+.read-more-btn {
+  display: inline-block;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 8px;
+  font-size: 13px;
+  border-radius: 50px;
+  text-decoration: none;
+  align-self: flex-start;
 }
 
 /* Podcast Page Styles */
@@ -12305,6 +12370,125 @@ h3, .h3 {
 }
 .community-container {
   margin-top: 10rem;
+}
+
+.latest-news-title {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  font-weight: 800;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-page form {
+  width: 100%;
+}
+
+.contact-page h1, .contact-page .h1 {
+  margin-top: 8rem;
+}
+
+.contact-page input[type=text],
+.contact-page input[type=email],
+.contact-page textarea {
+  width: 30rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.contact-page label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.contact-page input[type=submit],
+.contact-page .wpforms-submit {
+  background-color: #fe6a34;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  width: 25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 1rem auto 0;
+}
+
+.contact-page input[type=submit]:hover,
+.contact-page .wpforms-submit:hover {
+  background-color: #ba4f29;
+}
+
+.about-us-page {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.about-hero-container {
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.about-us-hero-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section h2, .about-section .h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.mission-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-img {
+  width: 300px;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mission-text p {
+  margin-bottom: 1rem;
 }
 
 main,

@@ -1,0 +1,47 @@
+    .contact-page form {
+      width: 100%;
+    }
+    .contact-page {
+      h1 {
+        margin-top: 8rem;
+      }
+    }
+
+    .contact-page input[type="text"],
+    .contact-page input[type="email"],
+    .contact-page textarea {
+      width: 30rem;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .contact-page label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .contact-page input[type="submit"],
+    .contact-page .wpforms-submit {
+      background-color: #fe6a34;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      width: 25rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 1rem auto 0;
+    }
+
+    .contact-page input[type="submit"]:hover,
+    .contact-page .wpforms-submit:hover {
+      background-color: #ba4f29;
+    }

@@ -3,7 +3,7 @@
 <main>
   <div class="container">
 
-    <!-- Hero Section with ACF Fields (No loop needed) -->
+
     <div class="row hero-container position-relative">
       <div class="hero-img-wrapper">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-image.png" alt="hero-image" class="img-fluid hero-img">
@@ -19,16 +19,63 @@
       </div>
     </div>
 
+
+
+    <!-- lATEST EPISODES -->
+    <h1 class="latest-episodes-title">Latest Episodes</h1>
+
+    <div class="swiper latestEpisodesSwiper">
+      <div class="swiper-wrapper">
+        <?php
+        $access_token = get_spotify_access_token();
+        $show_id = '1q2IxKPA9EeoeRQkIqK5Vv';
+
+        if ($access_token && $show_id) {
+          $response = wp_remote_get("https://api.spotify.com/v1/shows/{$show_id}/episodes?market=US&limit=6", [
+            'headers' => [
+              'Authorization' => 'Bearer ' . $access_token,
+            ],
+          ]);
+
+          if (!is_wp_error($response)) {
+            $episodes = json_decode(wp_remote_retrieve_body($response), true)['items'];
+
+            foreach ($episodes as $episode): ?>
+              <div class="swiper-slide">
+                <div class="podcast-flex">
+                  <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/episode/<?php echo esc_attr($episode['id']); ?>"
+                    width="400" height="300" frameborder="0" allowfullscreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+        <?php endforeach;
+          } else {
+            echo '<p>Error fetching episodes.</p>';
+          }
+        } else {
+          echo '<p>Spotify access token failed.</p>';
+        }
+        ?>
+      </div>
+
+      <!-- Add navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+
+
     <!-- Upcoming giveaways and events section -->
 
     <h1 class="slider-title">Upcoming Giveaways & Events</h1>
-
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <?php
         $carousel_query = new WP_Query([
-          'post_type' => 'update', // or your custom post type
-          'category_name' => 'Updates & Giveaways',
+          'post_type' => 'update',
+          'category_name' => 'Events, Giveaways',
           'posts_per_page' => 5,
         ]);
 
@@ -53,37 +100,38 @@
 
 
     <!-- Monthly Artists Section -->
-    <h1 class="slider-title">Artist of the Month</h1>
-    <div class="article-container">
+    <div class="container artist-container py-5">
+      <h2 class="artist-container-heading text-center mb-4">Artist of the Month</h2>
+      <div class="row g-4">
+        <?php
+        $artist_query = new WP_Query([
+          'post_type' => 'artist_of_the_month',
+          'posts_per_page' => 2,
+          'tax_query' => [[
+            'taxonomy' => 'artist_type',
+            'field'    => 'slug',
+            'terms'    => ['local', 'international'],
+          ]]
+        ]);
 
-      <div class="container artist-container">
-        <div class="artist-container">
-
-          <!-- Artist 1 -->
-          <div class="col-12 col-md-6 artists">
-            <h3><?php the_field('artist_1_type'); ?></h3>
-            <?php
-            $image1 = get_field('artist_1_image');
-            if ($image1): ?>
-              <img class="artist-card" src="<?php echo esc_url($image1['url']); ?>" alt="<?php echo esc_attr($image1['alt']); ?>">
-            <?php endif; ?>
-            <h4><?php the_field('artist_1_name'); ?></h4>
-            <p><?php the_field('artist_1_description'); ?></p>
+        while ($artist_query->have_posts()) : $artist_query->the_post();
+          $terms = get_the_terms(get_the_ID(), 'artist_type');
+          $type = $terms && !is_wp_error($terms) ? $terms[0]->name : '';
+        ?>
+          <div class="col-md-5">
+            <div class="">
+              <?php if (has_post_thumbnail()): ?>
+                 <h5 class="artist-type text-center"><?php echo $type; ?></h5>
+                <img src="<?php the_post_thumbnail_url('medium'); ?>" class="card-img-top" alt="<?php the_title(); ?>">
+              <?php endif; ?>
+              <div class="card-body">
+                <h3 class="card-title"><?php the_title(); ?></h3>
+                <p class="card-text"><?php echo wp_trim_words(get_the_content(), 40); ?></p>
+              </div>
+            </div>
           </div>
-
-          <!-- Artist 2 -->
-          <div class="col-12 col-md-6 artists">
-            <h3><?php the_field('artist_2_type'); ?></h3>
-            <?php
-            $image2 = get_field('artist_2_image');
-            if ($image2): ?>
-              <img class="artist-card" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>">
-            <?php endif; ?>
-            <h4><?php the_field('artist_2_name'); ?></h4>
-            <p><?php the_field('artist_2_description'); ?></p>
-          </div>
-
-        </div>
+        <?php endwhile;
+        wp_reset_postdata(); ?>
       </div>
     </div>
 
@@ -101,17 +149,18 @@
 
         while ($carousel_query->have_posts()) : $carousel_query->the_post(); ?>
           <div class="swiper-slide">
-            <a href="<?php the_permalink(); ?>">
-              <?php if (has_post_thumbnail()) {
-                the_post_thumbnail('medium', ['style' => 'border-radius: 20px; width: 19rem; height: 22rem;']);
-              } ?>
-              <h3 style="padding-top: 1rem; color: black; text-decoration: none;"><?php the_title(); ?></h3>
-              <p style="font-size: 0.9rem; color: #555; text-decoration: none;">
-                <?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?>
-              </p>
-              <a href="<?php the_permalink(); ?>" class="read-more-btn">Read On</a>
-            </a>
+            <div class="slide-inner">
+              <a href="<?php the_permalink(); ?>">
+                <?php if (has_post_thumbnail()) {
+                  the_post_thumbnail('medium', ['style' => 'border-radius: 20px; width: 19rem; height: 23rem;']);
+                } ?>
+                <h3 class="slide-title" style="font-weight: 700;"><?php the_title(); ?></h3>
+                <p class="slide-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 40, '...'); ?></p>
+                <span class="read-more-btn">Read On</span>
+              </a>
+            </div>
           </div>
+
         <?php endwhile;
         wp_reset_postdata(); ?>
       </div>
@@ -164,7 +213,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     new Swiper('.mySwiper', {
       loop: true,
-      spaceBetween: 20,
+      spaceBetween: 100,
       slidesPerView: 6,
       navigation: {
         nextEl: '.swiper-button-next',
@@ -180,6 +229,30 @@
         },
         1024: {
           slidesPerView: 4,
+        }
+      }
+    });
+  });
+
+  // Swiper for latest episodes
+  document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.latestEpisodesSwiper', {
+      loop: true,
+      spaceBetween: 20,
+      slidesPerView: 3,
+      navigation: {
+        nextEl: '.latestEpisodesSwiper .swiper-button-next',
+        prevEl: '.latestEpisodesSwiper .swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
         }
       }
     });

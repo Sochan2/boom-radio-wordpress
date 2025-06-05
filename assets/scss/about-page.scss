@@ -1,0 +1,60 @@
+// .about-us-hero-img {
+//     width: 60rem;
+//     height: 30rem;
+// }
+.about-us-page {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.about-hero-container {
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.about-us-hero-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.mission-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-img {
+  width: 300px;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mission-text p {
+  margin-bottom: 1rem;
+}
