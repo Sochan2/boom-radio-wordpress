@@ -38,22 +38,4 @@ get_template_part('parts/header');
     wp_reset_postdata(); ?>
   </div>
 </div>
-
-<style>
-  .read-more-btn {
-    display: inline-block;
-    background: black;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-
-  .read-more-btn:hover {
-    background: #333;
-    color: white;
-  }
-</style>
-
 <?php get_template_part('parts/footer'); ?>
