@@ -1,4 +1,52 @@
+body {
+  background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/paper-background.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+  background-color: #fdfcf8;
 
+}
+
+.search-container {
+  position: relative;
+}
+
+#searchBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  color: white;
+  font-size: 13px;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.search-form {
+  margin-top: 5px;
+}
+
+#searchInput {
+  width: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  margin-top: 5px;
+  padding: 0;
+  visibility: hidden;
+}
+
+.search-container.active #searchInput {
+  width: 200px;
+  opacity: 1;
+  padding: 5px 10px;
+  visibility: visible;
+}
 
 header {
   position: fixed;

@@ -12,3 +12,35 @@
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+
+.read-more-btn:hover {
+  background: #333;
+  color: white;
+}
+
+.pagination-wrapper {
+  text-align: center;
+}
+
+.pagination-wrapper .page-numbers {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 0 5px;
+  background: #f0f0f0;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.pagination-wrapper .current {
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+.pagination-wrapper .page-numbers:hover {
+  background: #333;
+  color: #fff;
+}

@@ -4,8 +4,9 @@
     <div class="flex-container">
       <div class="sub-container-1">
         <div class="menu-container">
+        <h5>MENU</h5>
           <ul class="list-inline">
-            <h5>MENU</h5>
+          
             <li>Home</li>
             <li>Latest News</li>
             <li>Events</li>
@@ -15,8 +16,9 @@
         </div>
 
         <div class="categories-container">
+        <h5>CATEGORIES</h5>
           <ul class="list-inline">
-            <h5>CATEGORIES</h5>
+           
             <li>Home</li>
             <li>Latest News</li>
             <li>Events</li>
@@ -26,8 +28,9 @@
         </div>
 
         <div class="company-container">
+        <h5>BOOM RADIO</h5>
           <ul class="list-inline">
-            <h5>BOOM RADIO</h5>
+           
             <li>About us</li>
             <li>Contact</li>
             <li>Privacy Policy</li>
@@ -88,7 +91,6 @@
 <?php wp_footer(); ?>
 </body>
 
-</html>
 <!-- Footer Links -->
 <!-- <ul class="list-inline mb-3">
   <li class="list-inline-item"><a href="#">About Us</a></li>
@@ -100,8 +102,7 @@
   <li class="list-inline-item"><a href="#">Newsletter</a></li>
   <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
 </ul>
-
-<!-- Social Icons -->
+ -->
 <!-- <div class="mb-3">
   <a href="#" class="text-dark mx-2"><i class="bi bi-facebook"></i></a>
   <a href="#" class="text-dark mx-2"><i class="bi bi-instagram"></i></a>
@@ -109,3 +110,5 @@
   <a href="#" class="text-dark mx-2"><i class="bi bi-youtube"></i></a>
   <a href="#" class="text-dark mx-2"><i class="bi bi-linkedin"></i></a>
 </div> -->
+
+</html>

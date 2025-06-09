@@ -193,3 +193,12 @@ function customize_search_results($query) {
     }
 }
 add_action('pre_get_posts', 'customize_search_results');
+
+//for validation
+
+function remove_speculationrules_script() {
+  remove_action( 'wp_head', 'wp_speculation_rules', 20 ); 
+}
+add_action( 'wp_loaded', 'remove_speculationrules_script' );
+
+

@@ -38,7 +38,7 @@ get_template_part('parts/header');
                                 <div class="">
                                     <iframe style="border-radius:12px"
                                         src="https://open.spotify.com/embed/episode/<?php echo esc_attr($episode['id']); ?>"
-                                        width="600" height="200" frameborder="0" allowfullscreen
+                                        width="600" height="200"  allowfullscreen
                                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
                                     </iframe>
                                 </div>
@@ -58,7 +58,7 @@ get_template_part('parts/header');
 
 <!-- Live Radio Player -->
 <div id="live-radio-player" class="live-radio">
-  <iframe src="https://tunein.com/embed/player/s195836/" width="100%" height="100" scrolling="no" frameborder="no"></iframe>
+  <iframe src="https://tunein.com/embed/player/s195836/" width="100" height="100"></iframe>
 </div>
 
 <!-- Floating Toggle Button -->
