@@ -15,18 +15,6 @@
           </ul>
         </div>
 
-        <div class="categories-container">
-        <h5>CATEGORIES</h5>
-          <ul class="list-inline">
-           
-            <li>Home</li>
-            <li>Latest News</li>
-            <li>Events</li>
-            <li>Giveaways</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-
         <div class="company-container">
         <h5>BOOM RADIO</h5>
           <ul class="list-inline">
@@ -60,7 +48,8 @@
           <div class="sub-container-3">
             <div class="contact-container">
               <h6>CONTACT</h6>
-              <p>0699 0944 0444</p>
+              <p>Studio: (08) 9443 2236</p>
+              <p>Office: (08) 9202 4816</p>
               <p>test@gmail.com</p>
             </div>
 
@@ -91,24 +80,5 @@
 <?php wp_footer(); ?>
 </body>
 
-<!-- Footer Links -->
-<!-- <ul class="list-inline mb-3">
-  <li class="list-inline-item"><a href="#">About Us</a></li>
-  <li class="list-inline-item"><a href="#">Artist of the Month</a></li>
-  <li class="list-inline-item"><a href="#">Sponsors</a></li>
-  <li class="list-inline-item"><a href="#">Contact</a></li>
-  <li class="list-inline-item"><a href="#">Under the Covers</a></li>
-  <li class="list-inline-item"><a href="#">T&C</a></li>
-  <li class="list-inline-item"><a href="#">Newsletter</a></li>
-  <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-</ul>
- -->
-<!-- <div class="mb-3">
-  <a href="#" class="text-dark mx-2"><i class="bi bi-facebook"></i></a>
-  <a href="#" class="text-dark mx-2"><i class="bi bi-instagram"></i></a>
-  <a href="#" class="text-dark mx-2"><i class="bi bi-twitter-x"></i></a>
-  <a href="#" class="text-dark mx-2"><i class="bi bi-youtube"></i></a>
-  <a href="#" class="text-dark mx-2"><i class="bi bi-linkedin"></i></a>
-</div> -->
 
 </html>

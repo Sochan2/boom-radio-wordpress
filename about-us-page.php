@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: About Us Page
  */
@@ -15,7 +16,7 @@ get_template_part('parts/header');
   </div>
 
   <!-- Who We Are Section -->
-  <section class="about-section">
+  <section class="about-section-text">
     <h2>Who We Are</h2>
     <p>
       We are Boom Radio in Leederville, WA. We value being local, entertaining, passionate, and current. We support local artists through interviews, social media promotion, and display. Also, we strengthen relationships with local businesses via contra-deal sponsorships, curated ads, and custom marketing campaigns.
@@ -26,17 +27,22 @@ get_template_part('parts/header');
   <section class="about-section mission-section">
     <h2>Mission</h2>
     <div class="mission-content">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mission-image.png" alt="Mission Image" class="mission-img">
+      
       <div class="mission-text">
         <p><em>"Through Boom Radio, we will push local artists and expand their opportunity to show their existence."</em></p>
-        <p>We will provide a platform for underrepresented artists and foster a vibrant, inclusive space. We support the Australian music industry and aid local businesses.</p>
+      </div>
+      <div class="mission-text">
+        <p><em>We will provide a platform for underrepresented artists and foster a vibrant, inclusive space. We support the Australian music industry and aid local businesses.</em></p>
+      </div>
+      <div class="mission-text">
+        <p><em>"We will support Australian music industory, and aiding local businesses."</em></p>
       </div>
     </div>
   </section>
 
   <!-- Member Section with Swiper Carousel -->
   <section class="about-section">
-    <h2>Member</h2>
+    <h2>Our team</h2>
 
     <!-- Swiper -->
     <div class="swiper mySwiper">
@@ -44,44 +50,37 @@ get_template_part('parts/header');
 
         <!-- Slide 1 -->
         <div class="swiper-slide member-card">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member1.jpg" alt="Member 1" class="member-photo" />
-          <h3>John Doe</h3>
-          <p>Radio Host</p>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member-1.jpg" alt="Member 1" class="member-photo" />
+          <h3>Rhylan</h3>
+          <p>Promotions Manag</p>
         </div>
 
         <!-- Slide 2 -->
         <div class="swiper-slide member-card">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member2.jpg" alt="Member 2" class="member-photo" />
-          <h3>Jane Smith</h3>
-          <p>Music Coordinator</p>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member-2.jpg" alt="Member 2" class="member-photo" />
+          <h3>Chris</h3>
+          <p>Operations Manager</p>
         </div>
 
         <!-- Slide 3 -->
         <div class="swiper-slide member-card">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member3.jpg" alt="Member 3" class="member-photo" />
-          <h3>Michael Brown</h3>
-          <p>Marketing Manager</p>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member-3.jpg" alt="Member 3" class="member-photo" />
+          <h3>Asha</h3>
+          <p>Digital Director</p>
         </div>
 
         <!-- Slide 3 -->
         <div class="swiper-slide member-card">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member3.jpg" alt="Member 3" class="member-photo" />
-          <h3>Michael Brown</h3>
-          <p>Marketing Manager</p>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member-4.jpg" alt="Member 3" class="member-photo" />
+          <h3>George</h3>
+          <p>Assistant News Director and Podcasting Director</p>
         </div>
 
         <!-- Slide 3 -->
         <div class="swiper-slide member-card">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member3.jpg" alt="Member 3" class="member-photo" />
-          <h3>Michael Brown</h3>
-          <p>Marketing Manager</p>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="swiper-slide member-card">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member3.jpg" alt="Member 3" class="member-photo" />
-          <h3>Michael Brown</h3>
-          <p>Marketing Manager</p>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/member-5.jpg" alt="Member 3" class="member-photo" />
+          <h3>Angus</h3>
+          <p>Podcasting and Website Assistant</p>
         </div>
 
       </div>

@@ -1,18 +1,23 @@
 footer {
-    margin-top: 15rem;
-    background-color: #333;
-    padding: 7rem;
-    padding-bottom: 3rem;
-    padding-left: 4rem;
-    color: white;
-    h4, h5 {
-      font-size: 17px;
-    }
-    h4, h5, h6 {
-      font-weight: 600;
-      text-align: left;
-    }
-    
+  margin-top: 15rem;
+  background-color: #333;
+  padding: 7rem;
+  padding-bottom: 3rem;
+  padding-left: 4rem;
+  color: white;
+
+  h4,
+  h5 {
+    font-size: 17px;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    text-align: left;
+  }
+
 }
 
 .footer a {
@@ -35,6 +40,7 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 .sub-container-1 {
   display: flex;
   text-align: left;
@@ -42,6 +48,7 @@ footer {
   font-size: 14px;
   flex-wrap: wrap;
 }
+
 .sub-container-3 {
   padding-top: 3rem;
   text-align: left;
@@ -49,14 +56,23 @@ footer {
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
-  
+
 }
-.menu-container li, .categories-container li, .company-container li {
+
+.menu-container li,
+.categories-container li,
+.company-container li {
   margin-top: 1rem;
 }
 
 .copyright {
-  text-align:left;
+  text-align: left;
   color: #ffffff;
 }
 
+@media (max-width: 767.98px) {
+  .tnp-email {
+    display: none;
+  }
+
+}

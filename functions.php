@@ -8,8 +8,20 @@ function my_custom_enqueue_scripts()
     false
   );
 
-  wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/css/style.css');
-  wp_enqueue_script('custom-js', get_template_directory_uri() . 'assets/js/main.js', [], false, true);
+  wp_enqueue_style(
+    'bootstrap-css',
+    get_template_directory_uri() . '/css/style.css',
+    [],
+    filemtime(get_template_directory() . '/css/style.css')
+  );
+
+  wp_enqueue_script(
+    'custom-js',
+    get_template_directory_uri() . '/assets/js/main.js',
+    [],
+    filemtime(get_template_directory() . '/assets/js/main.js'),
+    true
+  );
 }
 add_action('wp_enqueue_scripts', 'my_custom_enqueue_scripts');
 
@@ -137,13 +149,14 @@ add_action('after_setup_theme', 'add_my_menu');
 
 //custom icon
 
-function add_menu_icons($title, $item, $args, $depth) {
-  
+function add_menu_icons($title, $item, $args, $depth)
+{
+
   if ($args->theme_location !== 'main-menu') {
     return $title;
   }
 
-  
+
   $icon_map = [
     'home-icon'      => 'home-icon.svg',
     'podcasts-icon'  => 'podcast-icon.svg',
@@ -175,7 +188,7 @@ function add_menu_icons($title, $item, $args, $depth) {
     }
   }
 
- 
+
   if (!$icon_file) return $title;
 
   $icon_url = esc_url(get_template_directory_uri() . '/assets/img/' . $icon_file);
@@ -187,18 +200,18 @@ add_filter('nav_menu_item_title', 'add_menu_icons', 10, 4);
 
 
 //Custom search query
-function customize_search_results($query) {
-    if ($query->is_search() && $query->is_main_query()) {
-        $query->set('post_type', array('update', 'artist_of_the_month', 'post'));
-    }
+function customize_search_results($query)
+{
+  if ($query->is_search() && $query->is_main_query()) {
+    $query->set('post_type', array('update', 'artist_of_the_month', 'post'));
+  }
 }
 add_action('pre_get_posts', 'customize_search_results');
 
 //for validation
 
-function remove_speculationrules_script() {
-  remove_action( 'wp_head', 'wp_speculation_rules', 20 ); 
+function remove_speculationrules_script()
+{
+  remove_action('wp_head', 'wp_speculation_rules', 20);
 }
-add_action( 'wp_loaded', 'remove_speculationrules_script' );
-
-
+add_action('wp_loaded', 'remove_speculationrules_script');

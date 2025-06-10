@@ -1,5 +1,5 @@
 .swiper {
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
     
 }
 
@@ -12,11 +12,12 @@
 .slide-inner {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
   height: 100%; 
   max-height: 800px; /* Or however tall you want each slide */
-  padding: 1rem;
+  // padding: 1rem;
   box-sizing: border-box;
+  text-align: left;
 }
 
 .slide-title {
@@ -42,4 +43,14 @@
   border-radius:50px;
   text-decoration: none;
   align-self: flex-start;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #000000; /* Replace with your desired color */
+  background-color: #EEECDB;
+  border: 5px solid #fe6a34;
+  padding: 0.5rem;
+  font-size: 3rem; /* Optional: change icon size */
+  width: 10rem;
 }

@@ -4,15 +4,26 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo wp_get_document_title() ?></title>
+    <?php wp_head(); ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <script src="wp-content/themes/boom-radio/js/bootstrap.bundle.min.js"></script>
-    <script src= "<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
-       
+   
 
-  <?php wp_head(); ?>
+    <style>
+        body {
+            background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/paper-background.jpg');
+            background-repeat: repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            z-index: 0;
+            background-color: #fdfcf8;
+
+        }
+    </style>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -34,6 +45,10 @@
                             <input type="search" id="searchInput" class="search-field form-control" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" />
                         </form>
                     </div>
+                </li>
+
+                <li class="home-mobile-link">
+                    <a href="<?php echo home_url(); ?>" class="nav-link">Home</a>
                 </li>
 
             </ul>
