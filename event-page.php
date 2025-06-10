@@ -41,7 +41,7 @@ get_template_part('parts/header');
 <!-- Live Radio Player -->
 <div id="live-radio-player" class="live-radio">
 
-  <iframe src="https://tunein.com/embed/player/s195836/" width="100%" height="100"></iframe>
+  <iframe src="https://tunein.com/embed/player/s195836/" width="100" height="100"></iframe>
 </div>
 
 <!-- Floating Toggle Button -->
