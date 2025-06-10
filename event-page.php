@@ -6,7 +6,7 @@
 get_template_part('parts/header');
 ?>
 
-<div class="container py-5">
+<main>
   <h1 class="latest-news-title">Events</h1>
 
   <div class="row">
@@ -37,5 +37,17 @@ get_template_part('parts/header');
     <?php endwhile;
     wp_reset_postdata(); ?>
   </div>
+</main>
+<!-- Live Radio Player -->
+<div id="live-radio-player" class="live-radio">
+
+  <iframe src="https://tunein.com/embed/player/s195836/" width="100" height="100"></iframe>
 </div>
+
+<!-- Floating Toggle Button -->
+
+
+<button id="radio-toggle" class="radio-toggle">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/radio-icon.svg" width="80" alt="radio-icon" class="img-fluid">
+</button>
 <?php get_template_part('parts/footer'); ?>

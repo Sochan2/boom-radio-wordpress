@@ -1,17 +1,15 @@
 .hero-container {
     position: relative;
-    padding-top: 9rem;
+    padding-top: 7rem;
+    padding-bottom: 30rem;
 }
 
 .hero-img {
-    width: 95rem;
-    height: 42rem;
+    width: 75rem;
+    height: 30rem;
     border-radius: 30px;
-    margin-bottom: 10rem;
+    
 }
-
-
-
 
 
 .hero-text {
@@ -43,7 +41,7 @@
         text-shadow: rgba(0, 0, 0, 0.7) -4px 2px 2px;
         font-weight: 700;
         font-size: 3rem;
-        
+
     }
 
     h2 {
@@ -77,8 +75,7 @@
 
 
 .play-button {
-    background-color: #000000;
-    color: white;
+    background-color: #EEECDB;
     border: none;
     border-radius: 50px;
     width: 7rem;
@@ -93,7 +90,7 @@
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        background-color: #f1f1f1;
+        background-color: #313131;
         transform: scale(1.05);
         box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px -10px,
             rgba(0, 0, 0, 0.2) 0px 10px 10px -5px;
@@ -167,15 +164,150 @@
     padding-bottom: 1rem;
 }
 
-/* Responsive layout */
-@media (min-width: 768px) {
-    .artists {
-        margin: 1rem;
-    }
+.welcome-text,
+.radio-text,
+.explore-text {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    width: 1rem;
+    z-index: 10;
+    position: absolute;
+    border-radius: 30px;
+    border: 4px solid black;
+}
 
-    .row {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
+.welcome-text,
+.explore-text {
+    background-color: #EEECDB;
+    border-radius: 30px;
+    border: 4px solid black;
+}
+
+.welcome-text {
+    right: 70%;
+    top: 51%;
+    a {
+        color: #313131;
+        font-weight: 600;
+        
     }
+}
+
+.explore-text {
+    left: 70%;
+    top: 51%;
+}
+
+.radio-text {
+    color: #EEECDB;
+    background-color: #313131;
+    margin-top: -18rem;
+    top: 46%;
+
+}
+
+.listen {
+    color: #fe6a34;
+    text-align: center;
+}
+
+.listen-live-button {
+    float: right;
+    margin-top: 3rem;
+}
+
+.listen-symbol {
+    float: left;
+    margin-top: 4rem;
+    background-color: #EEECDB;
+    box-shadow: 5px 6px 2px rgba(0, 0, 0, 0.844);
+    border-radius: 10px;
+}
+
+.show-title {
+    font-weight: bold;
+    color: #fe6a34;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.explore-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    
+}
+
+.explore-arrow p {
+    text-align: center;
+    margin: 0;
+}
+
+.explore-arrow a {
+    color: #313131;
+    font-size: 2rem;
+    text-decoration: none;
+    background-color: #fe6a34;
+    padding: 0.5rem 2rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.581);
+    border-radius: 30px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+/* Responsive layout */
+
+@media (max-width: 767.98px) {
+  .hero-img {
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 1rem;
+    border-radius: 1px;
+  }
+
+  .container {
+    display: flex;
+    gap: 10rem;
+    flex-direction: column;
+  }
+
+  .radio-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .welcome-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .explore-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+ 
 }
