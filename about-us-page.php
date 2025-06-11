@@ -28,15 +28,33 @@ get_template_part('parts/header');
     <h2>Mission</h2>
     <div class="mission-content">
       
+    
+    <div class="mission-item">
+      <div class="image-container">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/talent-people.png" alt="talent person image" class="mission-image">
+      </div>
       <div class="mission-text">
         <p><em>"Through Boom Radio, we will push local artists and expand their opportunity to show their existence."</em></p>
+      </div>
+    </div>
+
+    <div class="mission-item">
+      <div class="image-container">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/support.png" alt="support people picture" class="mission-image">
       </div>
       <div class="mission-text">
         <p><em>We will provide a platform for underrepresented artists and foster a vibrant, inclusive space. We support the Australian music industry and aid local businesses.</em></p>
       </div>
-      <div class="mission-text">
-        <p><em>"We will support Australian music industory, and aiding local businesses."</em></p>
+    </div>
+
+    <div class="mission-item">
+      <div class="image-container">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/business.png" alt="business support picture" class="mission-image">
       </div>
+      <div class="mission-text">
+        <p><em>"We will support the Australian music industry and aid local businesses."</em></p>
+      </div>
+    </div>
     </div>
   </section>
 

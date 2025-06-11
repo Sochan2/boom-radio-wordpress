@@ -19,7 +19,7 @@
   cursor: pointer;
   display: flex;
   color: white;
-  font-size: 13px;
+  font-size: 16px;
   align-items: center;
   padding: 5px 10px;
 }
@@ -90,7 +90,6 @@ header.scrolled {
 .nav a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 13px;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
@@ -101,7 +100,7 @@ header.scrolled {
   margin-right: 8px;
 }
 
-/* ホバー時の下線アニメーション */
+
 .nav a::after {
   content: "";
   position: absolute;
@@ -143,6 +142,7 @@ header.scrolled {
   color: white;
   text-decoration: none;
   white-space: nowrap;
+  font-size: 16px;
 }
 
 .nav .sub-menu li a:hover {
@@ -166,10 +166,16 @@ header.scrolled {
   display: inline-block;
   padding-top: 6px;
   vertical-align: middle;
+
 }
 
 .home-mobile-link {
   display: none;
+}
+
+.nav-logo{
+  width:120%;
+  height:50px;
 }
 
 @media (max-width: 767.98px) {
@@ -178,6 +184,7 @@ header.scrolled {
     align-items: center;
     justify-content: center;
     list-style: none;
+    flex-wrap: none;
     padding: 10rem;
     margin: 0;
     padding: 0;
@@ -186,6 +193,8 @@ header.scrolled {
   .nav-logo-link {
     display: none;
   }
+
+
   .home-mobile-link {
     display: inline-block;
     

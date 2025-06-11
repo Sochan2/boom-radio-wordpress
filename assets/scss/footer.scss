@@ -70,9 +70,19 @@ footer {
   color: #ffffff;
 }
 
+.tnp-email {
+  width:30em;
+  padding:1em;
+  }
+
+  .tnp-submit{
+    background-color:#fe6a34; 
+    padding: 1rem;
+  }
+
 @media (max-width: 767.98px) {
-  .tnp-email {
-    display: none;
+ .tnp-email {
+  width:100%;
   }
 
 }
