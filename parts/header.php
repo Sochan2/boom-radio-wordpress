@@ -28,17 +28,20 @@
 
 <body <?php body_class(); ?>>
     <header>
+        <div class="logo">
         <a href="<?php echo home_url(); ?>" class="nav-logo-link">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/boom-logo.svg" alt="Logo" class="nav-logo">
         </a>
+        </div>
+        
 
         <nav class="nav">
             <ul>
                 <li class="search-toggle">
                     <div class="search-container">
                         <button id="searchBtn" class="" type="button">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/search-icon.svg" alt="search-icon" width="20">
-                            Search
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/search-icon.svg" alt="search-icon" >
+                            <span class="search-text">Search</span>
                         </button>
 
                         <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
@@ -54,12 +57,12 @@
                 </li>-->
 
            
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'main-menu',
-                'container_class' => 'custom-menu-class'
-            ));
-            ?>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'main-menu',
+                    'container_class' => 'custom-menu-class'
+                ));
+                ?>
              </ul>
         </nav>
 

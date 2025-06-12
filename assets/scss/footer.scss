@@ -80,9 +80,43 @@ footer {
     padding: 1rem;
   }
 
+  .sponsor{
+    display:flex;
+    flex-direction:row;
+    justify-content:left;
+  }
+
+  .sponsor img{
+    width:3.7em;
+    height:3.7em;
+    margin-right:1em;
+  }
+
+  .footer .sub-menu {
+    padding:0;
+  }
+
+  .footer .menu-icon{
+    display:none;
+  }
+
+  .footer .submenu li{
+    list-style:none;
+  }
+
+  .menu-item{
+    list-style:none;
+  }
+
+
 @media (max-width: 767.98px) {
  .tnp-email {
   width:100%;
+  }
+
+  .sponsor img{
+    width:4em;
+    height:4em;
   }
 
 }

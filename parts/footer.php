@@ -5,6 +5,13 @@
       <div class="sub-container-1">
         <div class="menu-container">
         <h5>MENU</h5>
+        <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'main-menu',
+                    'container_class' => 'custom-menu-class'
+                ));
+                ?>
+        <!--
           <ul class="list-inline">
           
             <li>Home</li>
@@ -13,14 +20,14 @@
             <li>Giveaways</li>
             <li>Contact</li>
           </ul>
+
+-->
         </div>
 
         <div class="company-container">
         <h5>BOOM RADIO</h5>
+
           <ul class="list-inline">
-           
-            <li>About us</li>
-            <li>Contact</li>
             <li>Privacy Policy</li>
             <li>Terms & Conditions</li>
           </ul>
@@ -45,14 +52,20 @@
             </form>
           </div>
 
-          <div class="sub-container-3">
-            <div class="contact-container">
-              <h6>CONTACT</h6>
-              <p>Studio: (08) 9443 2236</p>
-              <p>Office: (08) 9202 4816</p>
-              <p>test@gmail.com</p>
-            </div>
+          
 
+
+          <div class="sub-container-3">
+
+          <div class="sponsor-container">
+          <h5>SPONSORS</h5>
+          <div class="sponsor">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tafe-sponsor-logo.svg" alt="Logo" class="sponsor-logo"> 
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/kayak-sponsor-logo.svg" alt="Logo" class="sponsor-logo"> 
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/kyilla-sponsor-logo.svg" alt="Logo" class="sponsor-logo"> 
+          </div>
+          </div>
+           
             <div class="socialMedia-container">
               <h6>FOLLOW US</h6>
               <a href="#" class="text-dark mx-2"><i class="bi bi-facebook"></i></a>
