@@ -29,7 +29,7 @@
 <body <?php body_class(); ?>>
     <header>
         <a href="<?php echo home_url(); ?>" class="nav-logo-link">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/boom-logo.svg" alt="Logo" height="50" class="nav-logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/boom-logo.svg" alt="Logo" class="nav-logo">
         </a>
 
         <nav class="nav">
@@ -47,17 +47,20 @@
                     </div>
                 </li>
 
-                <li class="home-mobile-link">
-                    <a href="<?php echo home_url(); ?>" class="nav-link">Home</a>
-                </li>
+                <!--
 
-            </ul>
+                <li class="home-mobile-link">
+                    <a href="<?php //echo home_url(); ?>" class="nav-link">Home</a>
+                </li>-->
+
+           
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'main-menu',
                 'container_class' => 'custom-menu-class'
             ));
             ?>
+             </ul>
         </nav>
 
 

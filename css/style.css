@@ -11864,7 +11864,7 @@ textarea.form-control-lg {
   cursor: pointer;
   display: flex;
   color: white;
-  font-size: 13px;
+  font-size: 16px;
   align-items: center;
   padding: 5px 10px;
 }
@@ -11931,7 +11931,6 @@ header.scrolled {
 .nav a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 13px;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
@@ -11942,7 +11941,6 @@ header.scrolled {
   margin-right: 8px;
 }
 
-/* ホバー時の下線アニメーション */
 .nav a::after {
   content: "";
   position: absolute;
@@ -11981,6 +11979,7 @@ header.scrolled {
   color: white;
   text-decoration: none;
   white-space: nowrap;
+  font-size: 16px;
 }
 
 .nav .sub-menu li a:hover {
@@ -12010,12 +12009,18 @@ header.scrolled {
   display: none;
 }
 
+.nav-logo {
+  width: 120%;
+  height: 50px;
+}
+
 @media (max-width: 767.98px) {
   .nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
+    flex-wrap: none;
     padding: 10rem;
     margin: 0;
     padding: 0;
@@ -12098,9 +12103,19 @@ footer .h6 {
   color: #ffffff;
 }
 
+.tnp-email {
+  width: 30em;
+  padding: 1em;
+}
+
+.tnp-submit {
+  background-color: #fe6a34;
+  padding: 1rem;
+}
+
 @media (max-width: 767.98px) {
   .tnp-email {
-    display: none;
+    width: 100%;
   }
 }
 .hero-container {
@@ -12207,7 +12222,7 @@ footer .h6 {
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 2rem;
-  margin-top: 8rem;
+  margin-top: 15rem;
 }
 
 .upcoming-events-slider {
@@ -12354,6 +12369,9 @@ footer .h6 {
     height: 15rem;
     margin-bottom: 1rem;
     border-radius: 1px;
+  }
+  .hero-container {
+    padding-bottom: 10rem;
   }
   .container {
     display: flex;
@@ -12736,17 +12754,30 @@ h3, .h3 {
   justify-content: center;
   max-width: 1000px;
   align-items: center;
-  gap: 4rem;
 }
 
-.mission-img {
-  width: 300px;
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-text {
+  margin: auto;
+}
+
+.mission-image {
   max-width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
 
 .mission-text p {
   margin-bottom: 1rem;
+}
+
+.mission-item {
+  margin: 1.7em;
 }
 
 .member-photo {
@@ -12757,6 +12788,11 @@ h3, .h3 {
   margin-bottom: 1rem;
 }
 
+@media (max-width: 767.98px) {
+  .mission-content {
+    flex-direction: column;
+  }
+}
 main,
 header {
   font-family: "Roboto", sans-serif;

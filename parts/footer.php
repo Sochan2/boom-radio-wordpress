@@ -35,7 +35,7 @@
             <form method="post" action="http://localhost/wordpress/wp-admin/admin-ajax.php?action=tnp&na=s">
               <div class="container" style="display: flex; gap: 1rem;">
                 <div class="tnp-field tnp-field-email">
-                  <input class="tnp-email" type="email" name="ne" id="tnp-1" value="" placeholder="youremail@example.com" style="width: 30rem; padding: 1rem;" required>
+                  <input class="tnp-email" type="email" name="ne" id="tnp-1" value="" placeholder="youremail@example.com" required>
                 </div>
                 <div class="tnp-field tnp-field-button" style="text-align: left">
                   <input class="tnp-submit" type="submit" value="Subscribe" style="background-color:#fe6a34; padding: 1rem;">
@@ -56,10 +56,10 @@
             <div class="socialMedia-container">
               <h6>FOLLOW US</h6>
               <a href="#" class="text-dark mx-2"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="text-dark mx-2"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="text-dark mx-2"><i class="bi bi-twitter-x"></i></a>
-              <a href="#" class="text-dark mx-2"><i class="bi bi-youtube"></i></a>
-              <a href="#" class="text-dark mx-2"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.instagram.com/boomradioau/" class="text-dark mx-2"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.facebook.com/boomradioau/" class="text-dark mx-2"><i class="bi bi-twitter-x"></i></a>
+              <a href="http://tiktok.com/@boomradioau" class="text-dark mx-2"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/tiktok.svg" alt="Tiktok"></a>
+              <a href="https://au.linkedin.com/company/boom-radio" class="text-dark mx-2"><i class="bi bi-linkedin"></i></a>
 
             </div>
 
