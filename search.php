@@ -1,6 +1,6 @@
 <?php get_template_part('parts/header'); ?>
 
-<div class="container py-5">
+<main class="py-5">
     <h2 class="mb-4 latest-news-title">Search Results for: "<?php echo get_search_query(); ?>"</h2>
 
     <?php if (have_posts()) : ?>
@@ -40,6 +40,6 @@
     <?php else : ?>
         <p>No results found. Try another search.</p>
     <?php endif; ?>
-</div>
+</main>
 
 <?php get_template_part('parts/footer'); ?>

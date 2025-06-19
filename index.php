@@ -6,7 +6,7 @@
     <!-- Hero Section -->
     <div class="row hero-container position-relative">
       <div class="hero-img-wrapper">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/boom-radio-banner.png" alt="hero-image" class="hero-img">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/boom-banner.png" alt="hero-image" class="hero-img">
       </div>
 
       <div class="welcome-text col-12 col-md-3">
@@ -23,21 +23,22 @@
       </div>
       <div class="radio-text col-12 col-md-4">
         <h5><?php the_field('now_playing_title'); ?></h5>
-        <h2 class="show-title"><?php the_field('show_name'); ?></h2>
-        <p><?php the_field('show_description'); ?></p>
+        <h2 id="show-title"></h2>
+        <h3 id="show-host"></h3>
+        <p id="show-description"></p>
         <div class="listen-live-button">
           <p class="listen">Listen Live</p>
           <button class="play-button">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/play-icon.svg" alt="play-button" class="img-fluid">
           </button>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sound-icon.svg" alt="listen-symbol" class="listen-symbol img-fluid">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/listening-icon-white.png" alt="listen-symbol" class="listen-symbol img-fluid">
       </div>
       <div class="explore-text col-12 col-md-3">
-        <h2 class="bold">Out Latest Content</h2>
+        <h2 class="bold">Our Latest Content</h2>
         <p>Explore the latest news, events, giveaways, and Artists of the Month by scrolling down!</p>
         <div class="explore-arrow">
-          <p>Scroll Down</p>
+          <p class="bold">Scroll Down</p>
           <a href="#latest-episodes">&dArr;</a>
         </div>
 
@@ -98,9 +99,13 @@
         while ($carousel_query->have_posts()) : $carousel_query->the_post(); ?>
           <div class="swiper-slide">
             <a href="<?php the_permalink(); ?>">
-              <?php if (has_post_thumbnail()) {
-                the_post_thumbnail('medium', ['style' => 'border-radius: 20px; width: 18rem; height: 18rem;']);
-              } ?>
+              <?php
+              // Manually get image without auto-generated sizes
+              $thumbnail_id = get_post_thumbnail_id();
+              $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'medium');
+              if ($thumbnail_url) : ?>
+                <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>" style="border-radius: 20px; width: 18rem; height: 18rem;" />
+              <?php endif; ?>
             </a>
           </div>
         <?php endwhile;
@@ -110,6 +115,7 @@
       <div class="swiper-button-prev"></div>
     </div>
   </div>
+
 
   <!-- Artists of the month -->
 
@@ -132,16 +138,18 @@
         $type = $terms && !is_wp_error($terms) ? $terms[0]->name : '';
       ?>
         <div class="col-md-5">
-          <div class="">
-            <?php if (has_post_thumbnail()): ?>
-              <h5 class="artist-type text-center"><?php echo $type; ?></h5>
-              <img src="<?php the_post_thumbnail_url('medium'); ?>" class="card-img-top" alt="<?php the_title(); ?>">
-            <?php endif; ?>
-            <div class="card-body">
-              <h3 class="card-title"><?php the_title(); ?></h3>
-              <p class="card-text"><?php echo wp_trim_words(get_the_content(), 40); ?></p>
+          <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark">
+            <div class="">
+              <?php if (has_post_thumbnail()): ?>
+                <h5 class="artist-type text-center"><?php echo esc_html($type); ?></h5>
+                <img src="<?php the_post_thumbnail_url('medium'); ?>" class="artist-thumbnail" alt="<?php the_title(); ?>">
+              <?php endif; ?>
+              <div class="card-body">
+                <h3 class="card-title"><?php the_title(); ?></h3>
+                <p class="card-text"><?php echo wp_trim_words(get_the_content(), 40); ?></p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       <?php endwhile;
       wp_reset_postdata(); ?>
@@ -163,9 +171,16 @@
           <div class="swiper-slide">
             <div class="slide-inner">
               <a href="<?php the_permalink(); ?>">
-                <?php if (has_post_thumbnail()) {
-                  the_post_thumbnail('medium', ['style' => 'border-radius: 20px; width: 19rem; height: 23rem;']);
-                } ?>
+                <?php
+                $thumbnail_id = get_post_thumbnail_id();
+                $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'medium');
+                if ($thumbnail_url) : ?>
+                  <img
+                    src="<?php echo esc_url($thumbnail_url); ?>"
+                    alt="<?php the_title_attribute(); ?>"
+                    style="border-radius: 20px; width: 19rem; height: 23rem; object-fit: cover;" />
+                <?php endif; ?>
+
                 <h3 class="slide-title" style="font-weight: 700;"><?php the_title(); ?></h3>
                 <p class="slide-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 40, '...'); ?></p>
                 <span class="read-more-btn">Read On</span>
@@ -175,18 +190,19 @@
         <?php endwhile;
         wp_reset_postdata(); ?>
       </div>
+
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>
   </div>
 
-  </div>
+  
 </main>
 
 <!-- Live Radio Player -->
 <div id="live-radio-player" class="live-radio">
 
-  <iframe src="https://tunein.com/embed/player/s195836/" width="100%" height="100"></iframe>
+  <iframe src="https://tunein.com/embed/player/s195836/" width="1000" height="100"></iframe>
 </div>
 
 <!-- Floating Toggle Button -->

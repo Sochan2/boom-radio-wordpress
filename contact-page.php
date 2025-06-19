@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Contact Page
  */
@@ -10,10 +11,22 @@ get_template_part('parts/header');
     <h1 class="text-3xl font-bold mb-4"><?php the_title(); ?></h1>
     <p class="mb-6 max-w-md">Feel free to contact us using the form below.</p>
 
-     <?php echo do_shortcode('[contact-form-7 id="6517149" title="Contact form 1"]'); ?> 
+    <?php echo do_shortcode('[contact-form-7 id="6517149" title="Contact form 1"]'); ?>
   </section>
 
-  
+
 </div>
 
+<!-- Live Radio Player -->
+<div id="live-radio-player" class="live-radio">
+
+  <iframe src="https://tunein.com/embed/player/s195836/" width="1000" height="100"></iframe>
+</div>
+
+<!-- Floating Toggle Button -->
+
+
+<button id="radio-toggle" class="radio-toggle">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/radio-icon.svg" width="80" alt="radio-icon" class="img-fluid">
+</button>
 <?php get_template_part('parts/footer'); ?>

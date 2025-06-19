@@ -71,14 +71,43 @@ footer {
 }
 
 .tnp-email {
-  width:30em;
-  padding:1em;
-  }
+  width: 40rem;
+  padding: 4em;
+}
 
-  .tnp-submit{
-    background-color:#fe6a34; 
-    padding: 1rem;
-  }
+.tnp-submit {
+  background-color: #fe6a34;
+  padding: 1rem;
+}
+
+.sponsor {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.sponsor img {
+  width: 3.7em;
+  height: 3.7em;
+  margin-right: 1em;
+}
+
+.footer .sub-menu {
+  padding: 0;
+}
+
+.footer .menu-icon {
+  display: none;
+}
+
+.footer .submenu li {
+  list-style: none;
+}
+
+.menu-item {
+  list-style: none;
+}
+
 
   .sponsor{
     display:flex;
@@ -110,8 +139,13 @@ footer {
 
 
 @media (max-width: 767.98px) {
- .tnp-email {
-  width:100%;
+  .tnp-email {
+    width: 100%;
+  }
+
+  .sponsor img {
+    width: 4em;
+    height: 4em;
   }
 
   .sponsor img{
