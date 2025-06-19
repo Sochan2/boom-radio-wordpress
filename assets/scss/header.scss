@@ -141,8 +141,12 @@ header.scrolled {
 /* Logo*/
 .nav-logo-link {
   position: fixed;
-  top: 6px;
-  left: 156px;
+  top: 2px;
+  left: 161px;
+}
+
+.nav-logo {
+  width: 8rem;
 }
 
 .menu-icon {
@@ -187,18 +191,7 @@ header.scrolled {
     padding: 0;
   }
 
-  .nav-logo-link {
-    width: 50%;
-    height: 50%;
-  }
 
-  .nav-logo {
-    position: absolute;
-    left: 1%;
-    width: 60%;
-    height: 70%;
-
-  }
 
   .logo a {
     position: absolute;
@@ -238,11 +231,13 @@ header.scrolled {
 
   .nav-logo-link {
     position: fixed;
-    top: 6px;
+    top: 1px;
     left: 156px;
-    width: 8rem;
-    height: 4rem;
   }
-  
+
+  .nav-logo {
+    width: 5rem;
+  }
+
 
 }
