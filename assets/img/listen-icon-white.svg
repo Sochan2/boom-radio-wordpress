@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 70" width="71" height="70">
+	<title>listen-icon</title>
+	<defs>
+		<image  width="93" height="93" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAABdAQMAAAD9v/iAAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAA7uzb5dHz2QAAAAJ0Uk5TAP9bkSK1AAABXUlEQVR4nM3Tr07DQBwH8B5daF33ACRXMjG5IBfEdQq58AKQIxNFEJggICC9MlFHwgtA9giTIBbqkEzido4JklUsUOhWjmvX3i8Egdu5j2l/f74/pCkPrQisSAGmrARpKfCQgtQvgRYK9ESB8aEAjxWQR5+tf+bwbM6sLsuQ2rQAmm8KDBwJPa4JjGwJI6pTZkyqEhZvUKa/ZcAhoT1tZkoQf58GD9sVidS/o8HLhgSar2GB2yuJr4rA5PoH1jQ2Me3NdkIBPI6qmPrvObgtppPUuETo4M5lIkpCsjPsxou+BBc1nGwNb7oFdvdGAyeHe9h+LtA5aj/dl2i8Fjg4qwO4zSXo+f8BPgA/faz8FJQDCgUtFM3JtpvDrG04EDAqMERlvGKl5eDhSsCyNK+lrJH0CQ0uTs3fqwehAHEBQcoitgQIH4glCKw1/SvXIP7gMODJgGMCZwYOMH8rhm8Fzd9e2pbLJwAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<g>
+		<use  href="#img1" x="-11" y="-11"/>
+	</g>
+</svg>

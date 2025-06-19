@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Event Page
  */
@@ -21,9 +22,17 @@ get_template_part('parts/header');
       <div class="col-md-4 mb-4">
         <div class="card h-100">
           <a href="<?php the_permalink(); ?>">
-            <?php if (has_post_thumbnail()) {
-              the_post_thumbnail('medium', ['class' => 'card-img-top', 'style' => 'border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; height: 18rem; object-fit: cover;']);
-            } ?>
+            <?php
+            
+            $thumbnail_id = get_post_thumbnail_id();
+            $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'medium');
+            if ($thumbnail_url) : ?>
+              <img
+                src="<?php echo esc_url($thumbnail_url); ?>"
+                alt="<?php the_title_attribute(); ?>"
+                class="card-img-top"
+                style="border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; height: 18rem; object-fit: cover;" />
+            <?php endif; ?>
           </a>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"><?php the_title(); ?></h5>
@@ -31,6 +40,9 @@ get_template_part('parts/header');
             <div class="mt-auto">
               <a href="<?php the_permalink(); ?>" class="read-more-btn">Read On</a>
             </div>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on <?php the_time('F j, Y'); ?>
           </div>
         </div>
       </div>
@@ -41,7 +53,7 @@ get_template_part('parts/header');
 <!-- Live Radio Player -->
 <div id="live-radio-player" class="live-radio">
 
-  <iframe src="https://tunein.com/embed/player/s195836/" width="100" height="100"></iframe>
+  <iframe src="https://tunein.com/embed/player/s195836/" width="1000" height="100"></iframe>
 </div>
 
 <!-- Floating Toggle Button -->

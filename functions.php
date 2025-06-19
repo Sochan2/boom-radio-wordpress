@@ -82,6 +82,10 @@ function get_spotify_access_token()
   $body = json_decode(wp_remote_retrieve_body($response), true);
   return $body['access_token'] ?? false;
 }
+
+
+
+
 //Artist of the month post type 
 function register_artist_of_the_month_cpt()
 {
@@ -215,3 +219,4 @@ function remove_speculationrules_script()
   remove_action('wp_head', 'wp_speculation_rules', 20);
 }
 add_action('wp_loaded', 'remove_speculationrules_script');
+
